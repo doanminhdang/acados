@@ -1,0 +1,930 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.0                     
+******************************************************************************
+>> Linked Fri Mar 17 13:48:51 2017
+
+OUTPUT FILE NAME:   <test_ocp_qp_hpmpc.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00025de9
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  0002645a  000d9ba6  R  X
+  SRAM                  20000000   00040000  000009e0  0003f620  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00026460   00026460    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    00025ece   00025ece    r-x .text
+  000260d8    000260d8    000002ec   000002ec    r-- .const
+  000263c8    000263c8    00000098   00000098    r-- .cinit
+20000000    20000000    000009e0   00000000    rw-
+  20000000    20000000    00000400   00000000    rw- .sysmem
+  20000400    20000400    00000200   00000000    rw- .stack
+  20000600    20000600    000001fc   00000000    rw- .data
+  200007fc    200007fc    000001e4   00000000    rw- .bss
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c129encpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    00025ece     
+                  00000208    00005c4a     d_aux_ip_hard_libstr.obj (.text)
+                  00005e52    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : mpu_init.obj (.text)
+                  00005e54    00003dac     d_blas3_lib.obj (.text)
+                  00009c00    00003a00     d_back_ric_rec_libstr.obj (.text)
+                  0000d600    000039d8     d_lapack_lib.obj (.text)
+                  00010fd8    00002ffc     d_part_cond_libstr.obj (.text)
+                  00013fd4    00002790     ocp_qp_hpmpc.obj (.text)
+                  00016764    00001d74     d_blas2_lib.obj (.text)
+                  000184d8    00001bb8     fortran_order_interface_libstr.obj (.text)
+                  0001a090    000017d2     d_aux_lib.obj (.text)
+                  0001b862    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : startup.obj (.text)
+                  0001b864    00001728     tools.obj (.text)
+                  0001cf8c    000015fc     d_ip2_res_hard_libstr.obj (.text)
+                  0001e588    0000156c     main.obj (.text)
+                  0001faf4    000013ec     d_res_ip_res_hard_libstr.obj (.text)
+                  00020ee0    0000113a     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.obj (.text)
+                  0002201a    00000002     --HOLE-- [fill = 0]
+                  0002201c    000009ac                                   : e_pow.obj (.text)
+                  000229c8    00000760     d_blas3_diag_lib.obj (.text)
+                  00023128    00000726     d_aux_extern_depend_lib.obj (.text)
+                  0002384e    00000002     --HOLE-- [fill = 0]
+                  00023850    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  00023c20    00000324                                   : trgdrv.obj (.text)
+                  00023f44    0000030c                                   : lowlev.obj (.text)
+                  00024250    00000298                                   : vla_alloc.obj (.text)
+                  000244e8    0000026c                                   : ti_fmax.obj (.text)
+                  00024754    000001f4                                   : ull_div_t2.obj (.text)
+                  00024948    000001c4                                   : fopen.obj (.text)
+                  00024b0c    000001b6                                   : fd_add_t2.obj (.text)
+                  00024cc2    00000002     --HOLE-- [fill = 0]
+                  00024cc4    00000170                                   : e_sqrt.obj (.text)
+                  00024e34    00000136                                   : fd_div_t2.obj (.text)
+                  00024f6a    00000002     --HOLE-- [fill = 0]
+                  00024f6c    00000134                                   : fputs.obj (.text)
+                  000250a0    00000110     d_blas1_lib.obj (.text)
+                  000251b0    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.obj (.text)
+                  000252ac    000000fc                                   : s_scalbn.obj (.text)
+                  000253a8    000000dc                                   : setvbuf.obj (.text)
+                  00025484    000000ca     i_aux.obj (.text)
+                  0002554e    00000002     --HOLE-- [fill = 0]
+                  00025550    000000c8     rtsv7M4_T_le_v4SPD16_eabi.lib : fflush.obj (.text)
+                  00025618    000000ac                                   : _io_perm.obj (.text)
+                  000256c4    0000009c                                   : memcpy_t2.obj (.text)
+                  00025760    00000098                                   : fclose.obj (.text)
+                  000257f8    00000098                                   : fputc.obj (.text)
+                  00025890    00000094     d_aux_extern_depend_lib4.obj (.text)
+                  00025924    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  000259aa    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00025a30    0000007a                                   : memset_t2.obj (.text)
+                  00025aaa    00000002     --HOLE-- [fill = 0]
+                  00025aac    00000070                                   : autoinit.obj (.text)
+                  00025b1c    00000070                                   : printf.obj (.text)
+                  00025b8c    0000006c                                   : fprintf.obj (.text)
+                  00025bf8    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  00025c60    00000068                                   : trgmsg.obj (.text)
+                  00025cc8    00000064                                   : fseek.obj (.text)
+                  00025d2c    00000064                                   : s_frexp.obj (.text)
+                  00025d90    00000056                                   : ltoa.obj (.text)
+                  00025de6    00000002     --HOLE-- [fill = 0]
+                  00025de8    00000054                                   : boot.obj (.text)
+                  00025e3c    00000054                                   : exit.obj (.text)
+                  00025e90    0000004c                                   : atoi.obj (.text)
+                  00025edc    0000004c                                   : cpy_tbl.obj (.text)
+                  00025f28    00000048                                   : fd_toi_t2.obj (.text)
+                  00025f70    00000036                                   : strncpy.obj (.text)
+                  00025fa6    0000002e                                   : i_tofd_t2.obj (.text)
+                  00025fd4    00000020                                   : memchr.obj (.text)
+                  00025ff4    0000001c                                   : memccpy.obj (.text)
+                  00026010    00000018                                   : args_main.obj (.text)
+                  00026028    00000018                                   : strcmp.obj (.text)
+                  00026040    00000016                                   : strchr.obj (.text)
+                  00026056    00000002     --HOLE-- [fill = 0]
+                  00026058    00000014                                   : _lock.obj (.text)
+                  0002606c    00000014                                   : s_copysign.obj (.text)
+                  00026080    00000014                                   : strcpy.obj (.text)
+                  00026094    00000014                                   : strlen.obj (.text)
+                  000260a8    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  000260b6    0000000c                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  000260c2    0000000c     tm4c129encpdt_startup_ccs.obj (.text)
+                  000260ce    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : error.obj (.text)
+                  000260d2    00000004                                   : pre_init.obj (.text)
+
+.const     0    000260d8    000002ec     
+                  000260d8    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.obj (.const:.string:_ctypes_)
+                  000261d9    00000007     --HOLE-- [fill = 0]
+                  000261e0    00000070     tools.obj (.const:$P$T4$5)
+                  00026250    00000050     tools.obj (.const:$P$T3$4)
+                  000262a0    00000040     tools.obj (.const:$P$T2$3)
+                  000262e0    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : e_pow.obj (.const:$O1$$)
+                  00026310    00000030     tools.obj (.const:$P$T1$2)
+                  00026340    00000028     main.obj (.const:$P$T19$1)
+                  00026368    00000028     tools.obj (.const:$P$T6$7)
+                  00026390    00000020     tools.obj (.const:$P$T0$1)
+                  000263b0    00000014     tools.obj (.const:$P$T5$6)
+
+.cinit     0    000263c8    00000098     
+                  000263c8    0000006f     (.cinit..data.load) [load image, compression = lzss]
+                  00026437    00000001     --HOLE-- [fill = 0]
+                  00026438    0000000c     (__TI_handler_table)
+                  00026444    00000004     --HOLE-- [fill = 0]
+                  00026448    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00026450    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.sysmem    0    20000000    00000400     UNINITIALIZED
+                  20000000    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+                  20000008    000003f8     --HOLE--
+
+.stack     0    20000400    00000200     UNINITIALIZED
+                  20000400    00000200     --HOLE--
+
+.data      0    20000600    000001fc     UNINITIALIZED
+                  20000600    000000f0     rtsv7M4_T_le_v4SPD16_eabi.lib : defs.obj (.data:_ftable)
+                  200006f0    000000d0                                   : lowlev.obj (.data:$O1$$)
+                  200007c0    00000010                                   : defs.obj (.data)
+                  200007d0    0000000c                                   : exit.obj (.data:$O1$$)
+                  200007dc    0000000c                                   : memory.obj (.data:$O1$$)
+                  200007e8    00000008                                   : _lock.obj (.data:$O1$$)
+                  200007f0    00000004                                   : errno.obj (.data)
+                  200007f4    00000004                                   : fopen.obj (.data)
+                  200007f8    00000004                                   : stkdepth_vars.obj (.data)
+
+.bss       0    200007fc    000001e4     UNINITIALIZED
+                  200007fc    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.obj (.bss:_CIOBUF_)
+                  2000091c    000000a0     (.common:__TI_tmpnams)
+                  200009bc    0000001c                                   : vla_alloc.obj (.bss:$O1$$)
+                  200009d8    00000008                                   : trgdrv.obj (.bss:parmbuf)
+
+MODULE SUMMARY
+
+       Module                               code     ro data   rw data
+       ------                               ----     -------   -------
+    .\
+       d_aux_ip_hard_libstr.obj             23626    0         0      
+       d_blas3_lib.obj                      15788    0         0      
+       d_back_ric_rec_libstr.obj            14848    0         0      
+       d_lapack_lib.obj                     14808    0         0      
+       d_part_cond_libstr.obj               12284    0         0      
+       ocp_qp_hpmpc.obj                     10128    0         0      
+       d_blas2_lib.obj                      7540     0         0      
+       fortran_order_interface_libstr.obj   7096     0         0      
+       tools.obj                            5928     396       0      
+       d_aux_lib.obj                        6098     0         0      
+       d_ip2_res_hard_libstr.obj            5628     0         0      
+       main.obj                             5484     40        0      
+       d_res_ip_res_hard_libstr.obj         5100     0         0      
+       d_blas3_diag_lib.obj                 1888     0         0      
+       d_aux_extern_depend_lib.obj          1830     0         0      
+       tm4c129encpdt_startup_ccs.obj        12       520       0      
+       d_blas1_lib.obj                      272      0         0      
+       i_aux.obj                            202      0         0      
+       d_aux_extern_depend_lib4.obj         148      0         0      
+    +--+------------------------------------+--------+---------+---------+
+       Total:                               138708   956       0      
+                                                                      
+    E:\ti\ccsv7\tools\compiler\ti-cgt-arm_16.9.0.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.obj                         4410     0         0      
+       e_pow.obj                            2476     48        0      
+       lowlev.obj                           780      0         208    
+       memory.obj                           976      0         12     
+       trgdrv.obj                           804      0         8      
+       vla_alloc.obj                        664      0         28     
+       ti_fmax.obj                          620      0         0      
+       ull_div_t2.obj                       500      0         0      
+       fopen.obj                            452      0         4      
+       fd_add_t2.obj                        438      0         0      
+       defs.obj                             0        0         416    
+       trgmsg.obj                           104      0         288    
+       e_sqrt.obj                           368      0         0      
+       fd_div_t2.obj                        310      0         0      
+       fputs.obj                            308      0         0      
+       fd_cmp_t2.obj                        268      0         0      
+       ctype.obj                            0        257       0      
+       fd_mul_t2.obj                        252      0         0      
+       s_scalbn.obj                         252      0         0      
+       setvbuf.obj                          220      0         0      
+       fflush.obj                           200      0         0      
+       _io_perm.obj                         172      0         0      
+       memcpy_t2.obj                        156      0         0      
+       fclose.obj                           152      0         0      
+       fputc.obj                            152      0         0      
+       memset_t2.obj                        122      0         0      
+       autoinit.obj                         112      0         0      
+       printf.obj                           112      0         0      
+       fprintf.obj                          108      0         0      
+       copy_decompress_lzss.obj             104      0         0      
+       fseek.obj                            100      0         0      
+       s_frexp.obj                          100      0         0      
+       exit.obj                             84       0         12     
+       ltoa.obj                             86       0         0      
+       boot.obj                             84       0         0      
+       atoi.obj                             76       0         0      
+       cpy_tbl.obj                          76       0         0      
+       fd_toi_t2.obj                        72       0         0      
+       strncpy.obj                          54       0         0      
+       i_tofd_t2.obj                        46       0         0      
+       memchr.obj                           32       0         0      
+       _lock.obj                            20       0         8      
+       memccpy.obj                          28       0         0      
+       args_main.obj                        24       0         0      
+       strcmp.obj                           24       0         0      
+       strchr.obj                           22       0         0      
+       s_copysign.obj                       20       0         0      
+       strcpy.obj                           20       0         0      
+       strlen.obj                           20       0         0      
+       copy_decompress_none.obj             14       0         0      
+       copy_zero_init.obj                   12       0         0      
+       errno.obj                            0        0         4      
+       error.obj                            4        0         0      
+       pre_init.obj                         4        0         0      
+       stkdepth_vars.obj                    0        0         4      
+       mpu_init.obj                         2        0         0      
+       startup.obj                          2        0         0      
+    +--+------------------------------------+--------+---------+---------+
+       Total:                               16618    305       992    
+                                                                      
+       Heap:                                0        0         1024   
+       Stack:                               0        0         512    
+       Linker Generated:                    0        147       0      
+    +--+------------------------------------+--------+---------+---------+
+       Grand Total:                         155326   1408      2528   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00026450 records: 2, size/record: 8, table size: 16
+	.data: load addr=000263c8, load size=0000006f bytes, run addr=20000600, run size=000001fc bytes, compression=lzss
+	.bss: load addr=00026448, load size=00000008 bytes, run addr=200007fc, run size=000001e4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00026438 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                              
+-------   ----                                              
+00025e3d  C$$EXIT                                           
+00025c8f  C$$IO$$                                           
+00023efb  HOSTclock                                         
+00023ec3  HOSTclose                                         
+00023e85  HOSTgetenv                                        
+00023e29  HOSTlseek                                         
+00023dd7  HOSTopen                                          
+00023d8b  HOSTread                                          
+00023d2d  HOSTrename                                        
+00023cf3  HOSTtime                                          
+00023ca5  HOSTtime64                                        
+00023c6d  HOSTunlink                                        
+00023c21  HOSTwrite                                         
+000260c3  ResetISR                                          
+UNDEFED   SHT$$INIT_ARRAY$$Base                             
+UNDEFED   SHT$$INIT_ARRAY$$Limit                            
+200007fc  __CIOBUF_                                         
+20000600  __STACK_END                                       
+00000200  __STACK_SIZE                                      
+20000600  __STACK_TOP                                       
+00000400  __SYSMEM_SIZE                                     
+00026450  __TI_CINIT_Base                                   
+00026460  __TI_CINIT_Limit                                  
+00026438  __TI_Handler_Table_Base                           
+00026444  __TI_Handler_Table_Limit                          
+00025aad  __TI_auto_init                                    
+00024a11  __TI_cleanup                                      
+200007d0  __TI_cleanup_ptr                                  
+00025761  __TI_closefile                                    
+00025bf9  __TI_decompress_lzss                              
+000260a9  __TI_decompress_none                              
+00025551  __TI_doflush                                      
+200007d4  __TI_dtors_ptr                                    
+200007d8  __TI_enable_exit_profile_output                   
+200007c0  __TI_ft_end                                       
+ffffffff  __TI_pprof_out_hndl                               
+00021721  __TI_printfi                                      
+ffffffff  __TI_prof_data_size                               
+ffffffff  __TI_prof_data_start                              
+0002567b  __TI_rd_ok                                        
+00025c93  __TI_readmsg                                      
+00000000  __TI_static_base__                                
+2000091c  __TI_tmpnams                                      
+00025c61  __TI_writemsg                                     
+00025619  __TI_wrt_ok                                       
+000260b7  __TI_zero_init                                    
+000260cf  __abort_execution                                 
+00025925  __aeabi_cdcmpeq                                   
+00025925  __aeabi_cdcmple                                   
+000259ab  __aeabi_cdrcmple                                  
+00025f29  __aeabi_d2iz                                      
+00024b17  __aeabi_dadd                                      
+00024e35  __aeabi_ddiv                                      
+000251b1  __aeabi_dmul                                      
+00024b0d  __aeabi_dsub                                      
+00025fa7  __aeabi_i2d                                       
+00025a31  __aeabi_memclr                                    
+00025a31  __aeabi_memclr4                                   
+00025a31  __aeabi_memclr8                                   
+000256c5  __aeabi_memcpy                                    
+000256c5  __aeabi_memcpy4                                   
+000256c5  __aeabi_memcpy8                                   
+00025a33  __aeabi_memset                                    
+00025a33  __aeabi_memset4                                   
+00025a33  __aeabi_memset8                                   
+200007cc  __aeabi_stderr                                    
+200007c4  __aeabi_stdin                                     
+200007c8  __aeabi_stdout                                    
+00024755  __aeabi_uldivmod                                  
+ffffffff  __binit__                                         
+ffffffff  __c_args__                                        
+00005e53  __mpu_init                                        
+20000400  __stack                                           
+00024359  __vla_alloc                                       
+00024251  __vla_dealloc                                     
+000242d9  __vla_dealloc_eh                                  
+00026011  _args_main                                        
+00025de9  _c_int00                                          
+000260d8  _ctypes_                                          
+20000600  _ftable                                           
+200007e8  _lock                                             
+00026067  _nop                                              
+0002605f  _register_lock                                    
+00026059  _register_unlock                                  
+20000000  _sys_memory                                       
+0001b863  _system_post_cinit                                
+000260d3  _system_pre_init                                  
+200007ec  _unlock                                           
+00025e41  abort                                             
+000241a5  add_device                                        
+00025e91  atoi                                              
+ffffffff  binit                                             
+000235dd  c_free                                            
+000235e9  c_free_align                                      
+0002354d  c_zeros                                           
+0002358d  c_zeros_align                                     
+00023bf1  calloc                                            
+00024155  close                                             
+00025edd  copy_in                                           
+0002606d  copysign                                          
+0002606d  copysignl                                         
+000235f5  d_allocate_strmat                                 
+00023669  d_allocate_strvec                                 
+0000c5f9  d_back_ric_rec_sv_back_libstr                     
+0000d2cd  d_back_ric_rec_sv_forw_libstr                     
+00009d95  d_back_ric_rec_sv_libstr                          
+0000b099  d_back_ric_rec_trf_libstr                         
+0000b881  d_back_ric_rec_trs_libstr                         
+00009c01  d_back_ric_rec_work_space_size_bytes_libstr       
+00004e8d  d_backup_update_var_res_mpc_hard_libstr           
+0001a759  d_cast_diag_mat2strmat                            
+0001a747  d_cast_mat2strmat                                 
+0001a76b  d_cast_vec2vecmat                                 
+00002431  d_compute_alpha_mpc_hard_libstr                   
+00004801  d_compute_alpha_res_mpc_hard_libstr               
+00005481  d_compute_centering_correction_res_mpc_hard_libstr
+00003165  d_compute_mu_mpc_hard_libstr                      
+0000519b  d_compute_mu_res_mpc_hard_libstr                  
+00010fd9  d_cond_BAbt_libstr                                
+00011d45  d_cond_DCtd_libstr                                
+00011231  d_cond_RSQrq_libstr                               
+0001a0e5  d_create_strmat                                   
+0001a161  d_create_strvec                                   
+0001a187  d_cvt_mat2strmat                                  
+0001a467  d_cvt_strmat2mat                                  
+0001a6f9  d_cvt_strvec2vec                                  
+0001a2d3  d_cvt_tran_mat2strmat                             
+0001a5b3  d_cvt_tran_strmat2mat                             
+0001a419  d_cvt_vec2strvec                                  
+00025891  d_eye                                             
+000231d3  d_free                                            
+000231df  d_free_align                                      
+0002364d  d_free_strmat                                     
+0002368d  d_free_strvec                                     
+00000209  d_init_var_mpc_hard_libstr                        
+0001d0b9  d_ip2_res_mpc_hard_libstr                         
+0001cf8d  d_ip2_res_mpc_hard_work_space_size_bytes_libstr   
+00012525  d_part_cond_compute_problem_size_libstr           
+00012b5d  d_part_cond_libstr                                
+00012a57  d_part_cond_memory_space_size_bytes_libstr        
+000126d3  d_part_cond_work_space_size_bytes_libstr          
+00013245  d_part_expand_solution_libstr                     
+0001318f  d_part_expand_work_space_size_bytes_libstr        
+000233b1  d_print_e_mat                                     
+000237c5  d_print_e_strmat                                  
+000237ff  d_print_e_strvec                                  
+00023435  d_print_e_tran_mat                                
+00023827  d_print_e_tran_strvec                             
+000231eb  d_print_mat                                       
+0002369b  d_print_strmat                                    
+000236d5  d_print_strvec                                    
+000232c3  d_print_to_file_mat                               
+00023725  d_print_to_file_strmat                            
+00023769  d_print_to_file_strvec                            
+00023797  d_print_to_file_tran_strvec                       
+00023257  d_print_tran_mat                                  
+000236fd  d_print_tran_strvec                               
+00023335  d_print_tran_to_file_mat                          
+0001fb65  d_res_res_mpc_hard_libstr                         
+0001faf5  d_res_res_mpc_hard_work_space_size_bytes_libstr   
+0001a0bd  d_size_diag_strmat                                
+0001a091  d_size_strmat                                     
+0001a14f  d_size_strvec                                     
+00001abd  d_update_gradient_mpc_hard_libstr                 
+0000344d  d_update_gradient_new_rhs_mpc_hard_tv             
+0000564d  d_update_gradient_res_mpc_hard_libstr             
+00003915  d_update_hessian_gradient_res_mpc_hard_libstr     
+00000775  d_update_hessian_mpc_hard_libstr                  
+00002ac1  d_update_var_mpc_hard_libstr                      
+00023129  d_zeros                                           
+00023179  d_zeros_align                                     
+0001baab  daxpy_3l                                          
+00025117  daxpy_bkp_libstr                                  
+000250a1  daxpy_libstr                                      
+0001aca5  dcolpe_libstr                                     
+0001ac0d  dcolsw_libstr                                     
+0001ba21  dcopy_3l                                          
+0001b615  ddiaad_libspstr                                   
+0001b6ab  ddiaadin_libspstr                                 
+0001b58b  ddiaex_libspstr                                   
+0001b501  ddiain_libspstr                                   
+0001a907  ddiain_libstr                                     
+0001b03f  dgead_libstr                                      
+0001acfd  dgecp_libstr                                      
+000229c9  dgemm_l_diag_libstr                               
+0001b865  dgemm_nn_3l                                       
+00006535  dgemm_nn_libstr                                   
+00005e55  dgemm_nt_libstr                                   
+00022d79  dgemm_r_diag_libstr                               
+0001b925  dgemv_n_3l                                        
+00016765  dgemv_n_libstr                                    
+00016d7d  dgemv_nt_libstr                                   
+0001b9a3  dgemv_t_3l                                        
+00016a71  dgemv_t_libstr                                    
+0001bcd9  dger_3l                                           
+0001c343  dgesv_3l                                          
+0001bd9d  dgetf2_3l                                         
+0000e98d  dgetf2_nopivot                                    
+0001b20b  dgetr_libstr                                      
+0000fc51  dgetrf_libstr                                     
+0000eb05  dgetrf_nopivot_libstr                             
+0001c2eb  dgetrs_3l                                         
+0001bfb1  dlaswp_3l                                         
+0001a7bb  dmatex1_libstr                                    
+0001a77d  dmatin1_libstr                                    
+0001a837  dmatse_libstr                                     
+0001bb59  dmcopy                                            
+0000d601  dpotrf_l_libstr                                   
+0001b753  drowad_libspstr                                   
+0001aa83  drowad_libstr                                     
+0001a987  drowex_libstr                                     
+0001aa05  drowin_libstr                                     
+0001abb5  drowpe_libstr                                     
+0001ab0d  drowsw_libstr                                     
+0001bb11  dscal_3l                                          
+0001bc79  dswap_3l                                          
+00016f49  dsymv_l_libstr                                    
+0000de25  dsyrk_dpotrf_ln_libstr                            
+000093e5  dsyrk_ln_libstr                                   
+0001af8b  dtrcp_l_libstr                                    
+00008c45  dtrmm_rlnn_libstr                                 
+000084a3  dtrmm_rutn_libstr                                 
+000170a9  dtrmv_lnn_libstr                                  
+00017343  dtrmv_ltn_libstr                                  
+00017651  dtrmv_unn_libstr                                  
+00017949  dtrmv_utn_libstr                                  
+0001c155  dtrsm_l_l_n_u_3l                                  
+0001c20b  dtrsm_l_u_n_n_3l                                  
+00006c15  dtrsm_llnu_libstr                                 
+00007205  dtrsm_lunn_libstr                                 
+00007dbb  dtrsm_rltn_libstr                                 
+000078ef  dtrsm_rltu_libstr                                 
+000083f5  dtrsm_rutn_libstr                                 
+00017bcf  dtrsv_lnn_libstr                                  
+0001812b  dtrsv_ltn_libstr                                  
+0001b399  dtrtr_l_libstr                                    
+0001b44d  dtrtr_u_libstr                                    
+0001b7e7  dvecad_libspstr                                   
+0001ae8b  dveccp_libstr                                     
+0001a817  dvecex1_libstr                                    
+0001a7ed  dvecin1_libstr                                    
+0001a8b9  dvecse_libstr                                     
+200007f0  errno                                             
+00025e49  exit                                              
+0001cdcb  expm                                              
+000257c7  fclose                                            
+0002559d  fflush                                            
+0002467f  fmax                                              
+00024621  fmaxf                                             
+0002467f  fmaxl                                             
+0002454f  fmin                                              
+000244e9  fminf                                             
+0002454f  fminl                                             
+00024a67  fopen                                             
+0001883b  fortran_order_d_ip_ocp_hard_tv                    
+00025b95  fprintf                                           
+000257f9  fputc                                             
+00024f6d  fputs                                             
+0002393b  free                                              
+00024a3d  freopen                                           
+00025d2d  frexp                                             
+00025d2d  frexpl                                            
+00025cc9  fseek                                             
+00000000  g_pfnVectors                                      
+000184d9  hpmpc_d_ip_ocp_hard_tv_work_space_size_bytes      
+0001bbc7  idamax_3l                                         
+000254d1  int_free                                          
+000254dd  int_print_mat                                     
+00025485  int_zeros                                         
+000252ad  ldexp                                             
+000252ad  ldexpl                                            
+00024131  lseek                                             
+00025d91  ltoa                                              
+0001e94d  main                                              
+200007f8  main_func_sp                                      
+000238d1  malloc                                            
+0001e589  mass_spring_system                                
+00023b05  memalign                                          
+00025ff5  memccpy                                           
+00025fd5  memchr                                            
+000256c5  memcpy                                            
+00025a39  memset                                            
+00023851  minit                                             
+0001404b  ocp_qp_hpmpc                                      
+00014311  ocp_qp_hpmpc_libstr                               
+00015025  ocp_qp_hpmpc_libstr_pt                            
+00013fd5  ocp_qp_hpmpc_workspace_size_bytes                 
+0001c387  onenorm                                           
+00024083  open                                              
+0001c4ad  padeapprox                                        
+0002201d  pow                                               
+0002201d  powl                                              
+00025b25  printf                                            
+000257f9  putc                                              
+0002587d  putchar                                           
+00025079  puts                                              
+0002405f  read                                              
+000239fd  realloc                                           
+00023fd5  remove                                            
+00024037  remove_device                                     
+00023ff9  rename                                            
+000252ad  scalbn                                            
+000252ad  scalbnl                                           
+000253a9  setvbuf                                           
+00024cc5  sqrt                                              
+00024cc5  sqrtl                                             
+00026041  strchr                                            
+00026029  strcmp                                            
+00026081  strcpy                                            
+00026095  strlen                                            
+00025f71  strncpy                                           
+0001c441  twonormv                                          
+00023fd5  unlink                                            
+00023535  v_free                                            
+00023541  v_free_align                                      
+000234ab  v_zeros                                           
+000234eb  v_zeros_align                                     
+00023f45  write                                             
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                              
+-------   ----                                              
+00000000  __TI_static_base__                                
+00000000  g_pfnVectors                                      
+00000200  __STACK_SIZE                                      
+00000209  d_init_var_mpc_hard_libstr                        
+00000400  __SYSMEM_SIZE                                     
+00000775  d_update_hessian_mpc_hard_libstr                  
+00001abd  d_update_gradient_mpc_hard_libstr                 
+00002431  d_compute_alpha_mpc_hard_libstr                   
+00002ac1  d_update_var_mpc_hard_libstr                      
+00003165  d_compute_mu_mpc_hard_libstr                      
+0000344d  d_update_gradient_new_rhs_mpc_hard_tv             
+00003915  d_update_hessian_gradient_res_mpc_hard_libstr     
+00004801  d_compute_alpha_res_mpc_hard_libstr               
+00004e8d  d_backup_update_var_res_mpc_hard_libstr           
+0000519b  d_compute_mu_res_mpc_hard_libstr                  
+00005481  d_compute_centering_correction_res_mpc_hard_libstr
+0000564d  d_update_gradient_res_mpc_hard_libstr             
+00005e53  __mpu_init                                        
+00005e55  dgemm_nt_libstr                                   
+00006535  dgemm_nn_libstr                                   
+00006c15  dtrsm_llnu_libstr                                 
+00007205  dtrsm_lunn_libstr                                 
+000078ef  dtrsm_rltu_libstr                                 
+00007dbb  dtrsm_rltn_libstr                                 
+000083f5  dtrsm_rutn_libstr                                 
+000084a3  dtrmm_rutn_libstr                                 
+00008c45  dtrmm_rlnn_libstr                                 
+000093e5  dsyrk_ln_libstr                                   
+00009c01  d_back_ric_rec_work_space_size_bytes_libstr       
+00009d95  d_back_ric_rec_sv_libstr                          
+0000b099  d_back_ric_rec_trf_libstr                         
+0000b881  d_back_ric_rec_trs_libstr                         
+0000c5f9  d_back_ric_rec_sv_back_libstr                     
+0000d2cd  d_back_ric_rec_sv_forw_libstr                     
+0000d601  dpotrf_l_libstr                                   
+0000de25  dsyrk_dpotrf_ln_libstr                            
+0000e98d  dgetf2_nopivot                                    
+0000eb05  dgetrf_nopivot_libstr                             
+0000fc51  dgetrf_libstr                                     
+00010fd9  d_cond_BAbt_libstr                                
+00011231  d_cond_RSQrq_libstr                               
+00011d45  d_cond_DCtd_libstr                                
+00012525  d_part_cond_compute_problem_size_libstr           
+000126d3  d_part_cond_work_space_size_bytes_libstr          
+00012a57  d_part_cond_memory_space_size_bytes_libstr        
+00012b5d  d_part_cond_libstr                                
+0001318f  d_part_expand_work_space_size_bytes_libstr        
+00013245  d_part_expand_solution_libstr                     
+00013fd5  ocp_qp_hpmpc_workspace_size_bytes                 
+0001404b  ocp_qp_hpmpc                                      
+00014311  ocp_qp_hpmpc_libstr                               
+00015025  ocp_qp_hpmpc_libstr_pt                            
+00016765  dgemv_n_libstr                                    
+00016a71  dgemv_t_libstr                                    
+00016d7d  dgemv_nt_libstr                                   
+00016f49  dsymv_l_libstr                                    
+000170a9  dtrmv_lnn_libstr                                  
+00017343  dtrmv_ltn_libstr                                  
+00017651  dtrmv_unn_libstr                                  
+00017949  dtrmv_utn_libstr                                  
+00017bcf  dtrsv_lnn_libstr                                  
+0001812b  dtrsv_ltn_libstr                                  
+000184d9  hpmpc_d_ip_ocp_hard_tv_work_space_size_bytes      
+0001883b  fortran_order_d_ip_ocp_hard_tv                    
+0001a091  d_size_strmat                                     
+0001a0bd  d_size_diag_strmat                                
+0001a0e5  d_create_strmat                                   
+0001a14f  d_size_strvec                                     
+0001a161  d_create_strvec                                   
+0001a187  d_cvt_mat2strmat                                  
+0001a2d3  d_cvt_tran_mat2strmat                             
+0001a419  d_cvt_vec2strvec                                  
+0001a467  d_cvt_strmat2mat                                  
+0001a5b3  d_cvt_tran_strmat2mat                             
+0001a6f9  d_cvt_strvec2vec                                  
+0001a747  d_cast_mat2strmat                                 
+0001a759  d_cast_diag_mat2strmat                            
+0001a76b  d_cast_vec2vecmat                                 
+0001a77d  dmatin1_libstr                                    
+0001a7bb  dmatex1_libstr                                    
+0001a7ed  dvecin1_libstr                                    
+0001a817  dvecex1_libstr                                    
+0001a837  dmatse_libstr                                     
+0001a8b9  dvecse_libstr                                     
+0001a907  ddiain_libstr                                     
+0001a987  drowex_libstr                                     
+0001aa05  drowin_libstr                                     
+0001aa83  drowad_libstr                                     
+0001ab0d  drowsw_libstr                                     
+0001abb5  drowpe_libstr                                     
+0001ac0d  dcolsw_libstr                                     
+0001aca5  dcolpe_libstr                                     
+0001acfd  dgecp_libstr                                      
+0001ae8b  dveccp_libstr                                     
+0001af8b  dtrcp_l_libstr                                    
+0001b03f  dgead_libstr                                      
+0001b20b  dgetr_libstr                                      
+0001b399  dtrtr_l_libstr                                    
+0001b44d  dtrtr_u_libstr                                    
+0001b501  ddiain_libspstr                                   
+0001b58b  ddiaex_libspstr                                   
+0001b615  ddiaad_libspstr                                   
+0001b6ab  ddiaadin_libspstr                                 
+0001b753  drowad_libspstr                                   
+0001b7e7  dvecad_libspstr                                   
+0001b863  _system_post_cinit                                
+0001b865  dgemm_nn_3l                                       
+0001b925  dgemv_n_3l                                        
+0001b9a3  dgemv_t_3l                                        
+0001ba21  dcopy_3l                                          
+0001baab  daxpy_3l                                          
+0001bb11  dscal_3l                                          
+0001bb59  dmcopy                                            
+0001bbc7  idamax_3l                                         
+0001bc79  dswap_3l                                          
+0001bcd9  dger_3l                                           
+0001bd9d  dgetf2_3l                                         
+0001bfb1  dlaswp_3l                                         
+0001c155  dtrsm_l_l_n_u_3l                                  
+0001c20b  dtrsm_l_u_n_n_3l                                  
+0001c2eb  dgetrs_3l                                         
+0001c343  dgesv_3l                                          
+0001c387  onenorm                                           
+0001c441  twonormv                                          
+0001c4ad  padeapprox                                        
+0001cdcb  expm                                              
+0001cf8d  d_ip2_res_mpc_hard_work_space_size_bytes_libstr   
+0001d0b9  d_ip2_res_mpc_hard_libstr                         
+0001e589  mass_spring_system                                
+0001e94d  main                                              
+0001faf5  d_res_res_mpc_hard_work_space_size_bytes_libstr   
+0001fb65  d_res_res_mpc_hard_libstr                         
+00021721  __TI_printfi                                      
+0002201d  pow                                               
+0002201d  powl                                              
+000229c9  dgemm_l_diag_libstr                               
+00022d79  dgemm_r_diag_libstr                               
+00023129  d_zeros                                           
+00023179  d_zeros_align                                     
+000231d3  d_free                                            
+000231df  d_free_align                                      
+000231eb  d_print_mat                                       
+00023257  d_print_tran_mat                                  
+000232c3  d_print_to_file_mat                               
+00023335  d_print_tran_to_file_mat                          
+000233b1  d_print_e_mat                                     
+00023435  d_print_e_tran_mat                                
+000234ab  v_zeros                                           
+000234eb  v_zeros_align                                     
+00023535  v_free                                            
+00023541  v_free_align                                      
+0002354d  c_zeros                                           
+0002358d  c_zeros_align                                     
+000235dd  c_free                                            
+000235e9  c_free_align                                      
+000235f5  d_allocate_strmat                                 
+0002364d  d_free_strmat                                     
+00023669  d_allocate_strvec                                 
+0002368d  d_free_strvec                                     
+0002369b  d_print_strmat                                    
+000236d5  d_print_strvec                                    
+000236fd  d_print_tran_strvec                               
+00023725  d_print_to_file_strmat                            
+00023769  d_print_to_file_strvec                            
+00023797  d_print_to_file_tran_strvec                       
+000237c5  d_print_e_strmat                                  
+000237ff  d_print_e_strvec                                  
+00023827  d_print_e_tran_strvec                             
+00023851  minit                                             
+000238d1  malloc                                            
+0002393b  free                                              
+000239fd  realloc                                           
+00023b05  memalign                                          
+00023bf1  calloc                                            
+00023c21  HOSTwrite                                         
+00023c6d  HOSTunlink                                        
+00023ca5  HOSTtime64                                        
+00023cf3  HOSTtime                                          
+00023d2d  HOSTrename                                        
+00023d8b  HOSTread                                          
+00023dd7  HOSTopen                                          
+00023e29  HOSTlseek                                         
+00023e85  HOSTgetenv                                        
+00023ec3  HOSTclose                                         
+00023efb  HOSTclock                                         
+00023f45  write                                             
+00023fd5  remove                                            
+00023fd5  unlink                                            
+00023ff9  rename                                            
+00024037  remove_device                                     
+0002405f  read                                              
+00024083  open                                              
+00024131  lseek                                             
+00024155  close                                             
+000241a5  add_device                                        
+00024251  __vla_dealloc                                     
+000242d9  __vla_dealloc_eh                                  
+00024359  __vla_alloc                                       
+000244e9  fminf                                             
+0002454f  fmin                                              
+0002454f  fminl                                             
+00024621  fmaxf                                             
+0002467f  fmax                                              
+0002467f  fmaxl                                             
+00024755  __aeabi_uldivmod                                  
+00024a11  __TI_cleanup                                      
+00024a3d  freopen                                           
+00024a67  fopen                                             
+00024b0d  __aeabi_dsub                                      
+00024b17  __aeabi_dadd                                      
+00024cc5  sqrt                                              
+00024cc5  sqrtl                                             
+00024e35  __aeabi_ddiv                                      
+00024f6d  fputs                                             
+00025079  puts                                              
+000250a1  daxpy_libstr                                      
+00025117  daxpy_bkp_libstr                                  
+000251b1  __aeabi_dmul                                      
+000252ad  ldexp                                             
+000252ad  ldexpl                                            
+000252ad  scalbn                                            
+000252ad  scalbnl                                           
+000253a9  setvbuf                                           
+00025485  int_zeros                                         
+000254d1  int_free                                          
+000254dd  int_print_mat                                     
+00025551  __TI_doflush                                      
+0002559d  fflush                                            
+00025619  __TI_wrt_ok                                       
+0002567b  __TI_rd_ok                                        
+000256c5  __aeabi_memcpy                                    
+000256c5  __aeabi_memcpy4                                   
+000256c5  __aeabi_memcpy8                                   
+000256c5  memcpy                                            
+00025761  __TI_closefile                                    
+000257c7  fclose                                            
+000257f9  fputc                                             
+000257f9  putc                                              
+0002587d  putchar                                           
+00025891  d_eye                                             
+00025925  __aeabi_cdcmpeq                                   
+00025925  __aeabi_cdcmple                                   
+000259ab  __aeabi_cdrcmple                                  
+00025a31  __aeabi_memclr                                    
+00025a31  __aeabi_memclr4                                   
+00025a31  __aeabi_memclr8                                   
+00025a33  __aeabi_memset                                    
+00025a33  __aeabi_memset4                                   
+00025a33  __aeabi_memset8                                   
+00025a39  memset                                            
+00025aad  __TI_auto_init                                    
+00025b25  printf                                            
+00025b95  fprintf                                           
+00025bf9  __TI_decompress_lzss                              
+00025c61  __TI_writemsg                                     
+00025c8f  C$$IO$$                                           
+00025c93  __TI_readmsg                                      
+00025cc9  fseek                                             
+00025d2d  frexp                                             
+00025d2d  frexpl                                            
+00025d91  ltoa                                              
+00025de9  _c_int00                                          
+00025e3d  C$$EXIT                                           
+00025e41  abort                                             
+00025e49  exit                                              
+00025e91  atoi                                              
+00025edd  copy_in                                           
+00025f29  __aeabi_d2iz                                      
+00025f71  strncpy                                           
+00025fa7  __aeabi_i2d                                       
+00025fd5  memchr                                            
+00025ff5  memccpy                                           
+00026011  _args_main                                        
+00026029  strcmp                                            
+00026041  strchr                                            
+00026059  _register_unlock                                  
+0002605f  _register_lock                                    
+00026067  _nop                                              
+0002606d  copysign                                          
+0002606d  copysignl                                         
+00026081  strcpy                                            
+00026095  strlen                                            
+000260a9  __TI_decompress_none                              
+000260b7  __TI_zero_init                                    
+000260c3  ResetISR                                          
+000260cf  __abort_execution                                 
+000260d3  _system_pre_init                                  
+000260d8  _ctypes_                                          
+00026438  __TI_Handler_Table_Base                           
+00026444  __TI_Handler_Table_Limit                          
+00026450  __TI_CINIT_Base                                   
+00026460  __TI_CINIT_Limit                                  
+20000000  _sys_memory                                       
+20000400  __stack                                           
+20000600  __STACK_END                                       
+20000600  __STACK_TOP                                       
+20000600  _ftable                                           
+200007c0  __TI_ft_end                                       
+200007c4  __aeabi_stdin                                     
+200007c8  __aeabi_stdout                                    
+200007cc  __aeabi_stderr                                    
+200007d0  __TI_cleanup_ptr                                  
+200007d4  __TI_dtors_ptr                                    
+200007d8  __TI_enable_exit_profile_output                   
+200007e8  _lock                                             
+200007ec  _unlock                                           
+200007f0  errno                                             
+200007f8  main_func_sp                                      
+200007fc  __CIOBUF_                                         
+2000091c  __TI_tmpnams                                      
+ffffffff  __TI_pprof_out_hndl                               
+ffffffff  __TI_prof_data_size                               
+ffffffff  __TI_prof_data_start                              
+ffffffff  __binit__                                         
+ffffffff  __c_args__                                        
+ffffffff  binit                                             
+UNDEFED   SHT$$INIT_ARRAY$$Base                             
+UNDEFED   SHT$$INIT_ARRAY$$Limit                            
+
+[318 symbols]
