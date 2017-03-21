@@ -1,0 +1,13 @@
+/*
+ * main.c
+ */
+#include <stdio.h>
+
+int main(void) {
+    int i,j,k;
+    i = 2;
+    j = 2;
+    k = i+j;
+	printf("%d",i+j);
+	return 0;
+}
