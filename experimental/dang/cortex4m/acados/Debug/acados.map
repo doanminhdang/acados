@@ -1,0 +1,1278 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.0                     
+******************************************************************************
+>> Linked Thu Mar 09 14:51:12 2017
+
+OUTPUT FILE NAME:   <acados.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000281a5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0002a34e  00015cb2  R  X
+  SRAM                  20000000   00008000  00000af4  0000750c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0000026c   0000026c    r--
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+00000000    00000000    011768a4   00000000    rw-
+  00000000    00000000    011768a4   00000000    rw- .bss
+0000026c    0000026c    0002831a   0002831a    r-x
+  0000026c    0000026c    0002831a   0002831a    r-x .text
+00028588    00028588    00001dc8   00001dc8    r--
+  00028588    00028588    00001b80   00001b80    r-- .const
+  0002a108    0002a108    00000248   00000248    r-- .cinit
+20000000    20000000    00000af8   00000000    rw-
+  20000000    20000000    000008ec   00000000    rw- .data
+  200008ec    200008ec    00000200   00000000    rw- .stack
+  20000af0    20000af0    00000008   00000000    rw- .sysmem
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.bss       0    00000000    011768a4     FAILED TO ALLOCATE
+.text      0    0000026c    0002831a     
+                  0000026c    00011834     QProblem.obj (.text)
+                  00011aa0    0000763c     QProblemB.obj (.text)
+                  000190dc    00002ba6     Matrices.obj (.text)
+                  0001bc82    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : mpu_init.obj (.text)
+                  0001bc84    000014a4     Utils.obj (.text)
+                  0001d128    0000113a     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.obj (.text)
+                  0001e262    00000002                                   : startup.obj (.text)
+                  0001e264    00000f7c     Options.obj (.text)
+                  0001f1e0    00000efc     Constraints.obj (.text)
+                  000200dc    00000ea8     Bounds.obj (.text)
+                  00020f84    00000c18     main.obj (.text)
+                  00021b9c    00000ae0     sim_erk_integrator.obj (.text)
+                  0002267c    00000a7c     ocp_qp_condensing_qpoases.obj (.text)
+                  000230f8    00000974     d_aux_extern_depend_lib4.obj (.text)
+                  00023a6c    00000898     rtsv7M4_T_le_v4SPD16_eabi.lib : _scanfi.obj (.text)
+                  00024304    00000538     MessageHandling.obj (.text)
+                  0002483c    000004f0     Indexlist.obj (.text)
+                  00024d2c    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  000250fc    00000354     Chen_model.obj (.text)
+                  00025450    00000324     rtsv7M4_T_le_v4SPD16_eabi.lib : trgdrv.obj (.text)
+                  00025774    0000030c                                   : lowlev.obj (.text)
+                  00025a80    00000298                                   : vla_alloc.obj (.text)
+                  00025d18    0000023c                                   : strtod.obj (.text)
+                  00025f54    000001f4                                   : ull_div_t2.obj (.text)
+                  00026148    000001dc                                   : strtoll.obj (.text)
+                  00026324    000001d0                                   : fscanf.obj (.text)
+                  000264f4    000001c4                                   : fopen.obj (.text)
+                  000266b8    000001b6                                   : fd_add_t2.obj (.text)
+                  0002686e    00000002     --HOLE-- [fill = 0]
+                  00026870    00000174     Flipper.obj (.text)
+                  000269e4    00000170     rtsv7M4_T_le_v4SPD16_eabi.lib : e_sqrt.obj (.text)
+                  00026b54    0000016c                                   : fwrite.obj (.text)
+                  00026cc0    0000015c                                   : strtoull.obj (.text)
+                  00026e1c    0000014a     i_aux_extern_depend_lib.obj (.text)
+                  00026f66    00000136     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_div_t2.obj (.text)
+                  0002709c    00000134                                   : fputs.obj (.text)
+                  000271d0    00000134                                   : strtol.obj (.text)
+                  00027304    00000114                                   : strtoul.obj (.text)
+                  00027418    000000fc                                   : fd_mul_t2.obj (.text)
+                  00027514    000000fc                                   : s_scalbn.obj (.text)
+                  00027610    000000dc                                   : setvbuf.obj (.text)
+                  000276ec    000000c8                                   : fflush.obj (.text)
+                  000277b4    000000ac                                   : _io_perm.obj (.text)
+                  00027860    000000a0                                   : _bufread.obj (.text)
+                  00027900    0000009c                                   : memcpy_t2.obj (.text)
+                  0002799c    00000098                                   : fclose.obj (.text)
+                  00027a34    00000098                                   : fputc.obj (.text)
+                  00027acc    00000094                                   : snprintf.obj (.text)
+                  00027b60    00000090                                   : fgetc.obj (.text)
+                  00027bf0    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdcmple)
+                  00027c76    00000086                                   : fd_cmp_t2.obj (.text:__aeabi_cdrcmple)
+                  00027cfc    00000080                                   : ungetc.obj (.text)
+                  00027d7c    0000007a                                   : memset_t2.obj (.text)
+                  00027df6    00000002     --HOLE-- [fill = 0]
+                  00027df8    00000070                                   : autoinit.obj (.text)
+                  00027e68    00000070                                   : printf.obj (.text)
+                  00027ed8    0000006e                                   : fd_tos_t2.obj (.text)
+                  00027f46    00000002     --HOLE-- [fill = 0]
+                  00027f48    0000006c                                   : fprintf.obj (.text)
+                  00027fb4    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  0002801c    00000068                                   : trgmsg.obj (.text)
+                  00028084    00000064                                   : fseek.obj (.text)
+                  000280e8    00000064                                   : s_frexp.obj (.text)
+                  0002814c    00000056                                   : ltoa.obj (.text)
+                  000281a2    00000002     --HOLE-- [fill = 0]
+                  000281a4    00000054                                   : boot.obj (.text)
+                  000281f8    00000054                                   : exit.obj (.text)
+                  0002824c    0000004c                                   : atoi.obj (.text)
+                  00028298    0000004c                                   : cpy_tbl.obj (.text)
+                  000282e4    00000048                                   : fd_toi_t2.obj (.text)
+                  0002832c    00000044                                   : fd_tou_t2.obj (.text)
+                  00028370    00000038                                   : fs_tod_t2.obj (.text)
+                  000283a8    00000036                                   : strncpy.obj (.text)
+                  000283de    0000002e                                   : i_tofd_t2.obj (.text)
+                  0002840c    00000028     timing.obj (.text)
+                  00028434    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : memchr.obj (.text)
+                  00028454    00000020                                   : u_tofd_t2.obj (.text)
+                  00028474    0000001c                                   : memccpy.obj (.text)
+                  00028490    00000018                                   : args_main.obj (.text)
+                  000284a8    00000018                                   : ll_mul_t2.obj (.text)
+                  000284c0    00000018                                   : strcmp.obj (.text)
+                  000284d8    00000018                                   : strrchr.obj (.text)
+                  000284f0    00000016                                   : strchr.obj (.text)
+                  00028506    00000002     --HOLE-- [fill = 0]
+                  00028508    00000014                                   : _lock.obj (.text)
+                  0002851c    00000014                                   : s_copysign.obj (.text)
+                  00028530    00000014                                   : strcpy.obj (.text)
+                  00028544    00000014                                   : strlen.obj (.text)
+                  00028558    0000000e                                   : copy_decompress_none.obj (.text:decompress:none)
+                  00028566    0000000c                                   : copy_zero_init.obj (.text:decompress:ZI)
+                  00028572    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0002857e    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : error.obj (.text)
+                  00028582    00000004                                   : pre_init.obj (.text)
+
+.const     0    00028588    00001b80     
+                  00028588    000016ec     MessageHandling.obj (.const:.string)
+                  00029c74    00000004     QProblem.obj (.const:.string:$P$T0$99)
+                  00029c78    00000148     main.obj (.const:$P$T11$2)
+                  00029dc0    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.obj (.const:.string:_ctypes_)
+                  00029ec1    00000007     --HOLE-- [fill = 0]
+                  00029ec8    00000098                                   : strtod.obj (.const:$O1$$)
+                  00029f60    00000080     sim_erk_integrator.obj (.const:$P$T3$1)
+                  00029fe0    00000020     main.obj (.const:$P$T12$3)
+                  0002a000    00000020     sim_erk_integrator.obj (.const:$P$T4$2)
+                  0002a020    00000020     sim_erk_integrator.obj (.const:$P$T5$3)
+                  0002a040    00000018     Matrices.obj (.const)
+                  0002a058    00000018     QProblem.obj (.const)
+                  0002a070    00000018     QProblemB.obj (.const)
+                  0002a088    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : _scanfi.obj (.const:$O1$$)
+                  0002a098    00000010     main.obj (.const:$P$T10$1)
+                  0002a0a8    00000010     main.obj (.const:$P$T14$5)
+                  0002a0b8    00000010     main.obj (.const:$P$T15$6)
+                  0002a0c8    00000010     main.obj (.const:$P$T16$7)
+                  0002a0d8    00000010     Utils.obj (.const)
+                  0002a0e8    00000008     main.obj (.const:$P$T13$4)
+                  0002a0f0    00000008     main.obj (.const:$P$T17$8)
+                  0002a0f8    00000008     Options.obj (.const)
+                  0002a100    00000008     ocp_qp_condensing_qpoases.obj (.const)
+
+.cinit     0    0002a108    00000248     
+                  0002a108    00000221     (.cinit..data.load) [load image, compression = lzss]
+                  0002a329    00000003     --HOLE-- [fill = 0]
+                  0002a32c    0000000c     (__TI_handler_table)
+                  0002a338    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0002a340    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000000    000008ec     UNINITIALIZED
+                  20000000    000006f0     MessageHandling.obj (.data:returnValueList)
+                  200006f0    000000f0     rtsv7M4_T_le_v4SPD16_eabi.lib : defs.obj (.data:_ftable)
+                  200007e0    000000d0                                   : lowlev.obj (.data:$O1$$)
+                  200008b0    00000010                                   : defs.obj (.data)
+                  200008c0    0000000c                                   : exit.obj (.data:$O1$$)
+                  200008cc    0000000c                                   : memory.obj (.data:$O1$$)
+                  200008d8    00000008                                   : _lock.obj (.data:$O1$$)
+                  200008e0    00000004                                   : errno.obj (.data)
+                  200008e4    00000004                                   : fopen.obj (.data)
+                  200008e8    00000004                                   : stkdepth_vars.obj (.data)
+
+.stack     0    200008ec    00000200     UNINITIALIZED
+                  200008ec    00000200     --HOLE--
+
+.sysmem    0    20000af0    00000008     UNINITIALIZED
+                  20000af0    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+
+MODULE SUMMARY
+
+       Module                          code     ro data   rw data
+       ------                          ----     -------   -------
+    .\
+       QProblem.obj                    71732    28        0      
+       QProblemB.obj                   30268    24        0      
+       Matrices.obj                    11174    24        0      
+       MessageHandling.obj             1336     5868      1776   
+       Utils.obj                       5284     16        0      
+       Options.obj                     3964     8         0      
+       Constraints.obj                 3836     0         0      
+       Bounds.obj                      3752     0         0      
+       main.obj                        3096     440       0      
+       sim_erk_integrator.obj          2784     192       0      
+       ocp_qp_condensing_qpoases.obj   2684     8         0      
+       d_aux_extern_depend_lib4.obj    2420     0         0      
+       Indexlist.obj                   1264     0         0      
+       Chen_model.obj                  852      0         0      
+       tm4c123gh6pm_startup_ccs.obj    12       620       0      
+       Flipper.obj                     372      0         0      
+       i_aux_extern_depend_lib.obj     330      0         0      
+       timing.obj                      40       0         0      
+    +--+-------------------------------+--------+---------+---------+
+       Total:                          145200   7228      1776   
+                                                                 
+    E:\ti\ccsv7\tools\compiler\ti-cgt-arm_16.9.0.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.obj                    4410     0         0      
+       _scanfi.obj                     2200     16        0      
+       lowlev.obj                      780      0         208    
+       memory.obj                      976      0         12     
+       trgdrv.obj                      804      0         0      
+       strtod.obj                      572      152       0      
+       vla_alloc.obj                   664      0         0      
+       ull_div_t2.obj                  500      0         0      
+       strtoll.obj                     476      0         0      
+       fscanf.obj                      464      0         0      
+       fopen.obj                       452      0         4      
+       fd_add_t2.obj                   438      0         0      
+       e_sqrt.obj                      368      0         0      
+       fwrite.obj                      364      0         0      
+       strtoull.obj                    348      0         0      
+       fd_div_t2.obj                   310      0         0      
+       fputs.obj                       308      0         0      
+       strtol.obj                      308      0         0      
+       strtoul.obj                     276      0         0      
+       fd_cmp_t2.obj                   268      0         0      
+       ctype.obj                       0        257       0      
+       defs.obj                        0        0         256    
+       fd_mul_t2.obj                   252      0         0      
+       s_scalbn.obj                    252      0         0      
+       setvbuf.obj                     220      0         0      
+       fflush.obj                      200      0         0      
+       _io_perm.obj                    172      0         0      
+       _bufread.obj                    160      0         0      
+       memcpy_t2.obj                   156      0         0      
+       fclose.obj                      152      0         0      
+       fputc.obj                       152      0         0      
+       snprintf.obj                    148      0         0      
+       fgetc.obj                       144      0         0      
+       ungetc.obj                      128      0         0      
+       memset_t2.obj                   122      0         0      
+       autoinit.obj                    112      0         0      
+       printf.obj                      112      0         0      
+       fd_tos_t2.obj                   110      0         0      
+       fprintf.obj                     108      0         0      
+       copy_decompress_lzss.obj        104      0         0      
+       trgmsg.obj                      104      0         0      
+       fseek.obj                       100      0         0      
+       s_frexp.obj                     100      0         0      
+       exit.obj                        84       0         12     
+       ltoa.obj                        86       0         0      
+       boot.obj                        84       0         0      
+       atoi.obj                        76       0         0      
+       cpy_tbl.obj                     76       0         0      
+       fd_toi_t2.obj                   72       0         0      
+       fd_tou_t2.obj                   68       0         0      
+       fs_tod_t2.obj                   56       0         0      
+       strncpy.obj                     54       0         0      
+       i_tofd_t2.obj                   46       0         0      
+       memchr.obj                      32       0         0      
+       u_tofd_t2.obj                   32       0         0      
+       _lock.obj                       20       0         8      
+       memccpy.obj                     28       0         0      
+       args_main.obj                   24       0         0      
+       ll_mul_t2.obj                   24       0         0      
+       strcmp.obj                      24       0         0      
+       strrchr.obj                     24       0         0      
+       strchr.obj                      22       0         0      
+       s_copysign.obj                  20       0         0      
+       strcpy.obj                      20       0         0      
+       strlen.obj                      20       0         0      
+       copy_decompress_none.obj        14       0         0      
+       copy_zero_init.obj              12       0         0      
+       errno.obj                       0        0         4      
+       error.obj                       4        0         0      
+       pre_init.obj                    4        0         0      
+       stkdepth_vars.obj               0        0         4      
+       mpu_init.obj                    2        0         0      
+       startup.obj                     2        0         0      
+    +--+-------------------------------+--------+---------+---------+
+       Total:                          19424    425       508    
+                                                                 
+       Heap:                           0        0         8      
+       Stack:                          0        0         512    
+       Linker Generated:               0        581       0      
+    +--+-------------------------------+--------+---------+---------+
+       Grand Total:                    164624   8234      2804   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0002a340 records: 2, size/record: 8, table size: 16
+	.data: load addr=0002a108, load size=00000221 bytes, run addr=20000000, run size=000008ec bytes, compression=lzss
+	.bss: load addr=0002a338, load size=00000008 bytes, run addr=00000000, run size=011768a4 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0002a32c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                    
+-------   ----                                    
+0111d964  A_row_major                             
+0002021f  BoundsCON                               
+0002022f  BoundsCPY                               
+00020ced  Bounds_addIndex                         
+00020639  Bounds_flipFixed                        
+000202b7  Bounds_init                             
+000204f3  Bounds_moveFixedToFree                  
+00020599  Bounds_moveFreeToFixed                  
+00020b1d  Bounds_print                            
+00020e05  Bounds_removeIndex                      
+000208f9  Bounds_rotate                           
+00020b95  Bounds_setupAll                         
+000204c7  Bounds_setupAllFree                     
+000204d5  Bounds_setupAllLower                    
+000204e5  Bounds_setupAllUpper                    
+000203a1  Bounds_setupBound                       
+00020731  Bounds_shift                            
+000206cd  Bounds_swapFree                         
+00020e99  Bounds_swapIndex                        
+000281f9  C$$EXIT                                 
+0002804b  C$$IO$$                                 
+0001f327  ConstraintsCON                          
+0001f337  ConstraintsCPY                          
+0001fe0f  Constraints_addIndex                    
+0001f775  Constraints_flipFixed                   
+0001f3c3  Constraints_init                        
+0001f629  Constraints_moveActiveToInactive        
+0001f6d5  Constraints_moveInactiveToActive        
+0001fc3d  Constraints_print                       
+0001ff3d  Constraints_removeIndex                 
+0001fa15  Constraints_rotate                      
+0001fcb5  Constraints_setupAll                    
+0001f5e5  Constraints_setupAllInactive            
+0001f5f3  Constraints_setupAllLower               
+0001f603  Constraints_setupAllUpper               
+0001f4b9  Constraints_setupConstraint             
+0001f829  Constraints_shift                       
+0001ffd1  Constraints_swapIndex                   
+000191dd  DenseMatrixCON                          
+000191ff  DenseMatrixCPY                          
+0001ab73  DenseMatrix_addToDiag                   
+0001abe1  DenseMatrix_bilinear                    
+0001931b  DenseMatrix_diag                        
+0001927d  DenseMatrix_free                        
+00019699  DenseMatrix_getCol                      
+000193f7  DenseMatrix_getNorm                     
+00019461  DenseMatrix_getRow                      
+00019421  DenseMatrix_getRowNorm                  
+00019287  DenseMatrix_init                        
+00019363  DenseMatrix_isDiag                      
+0001abcb  DenseMatrix_print                       
+00019991  DenseMatrix_subTimes                    
+0001a73d  DenseMatrix_subTransTimes               
+000197e3  DenseMatrix_times                       
+000198b1  DenseMatrix_transTimes                  
+00026871  FlipperCON                              
+00026885  FlipperCPY                              
+000268d5  Flipper_get                             
+000269ad  Flipper_getDimT                         
+000268b9  Flipper_init                            
+00026941  Flipper_set                             
+0002572b  HOSTclock                               
+000256f3  HOSTclose                               
+000256b5  HOSTgetenv                              
+00025659  HOSTlseek                               
+00025607  HOSTopen                                
+000255bb  HOSTread                                
+0002555d  HOSTrename                              
+00025523  HOSTtime                                
+000254d5  HOSTtime64                              
+0002549d  HOSTunlink                              
+00025451  HOSTwrite                               
+0002483d  IndexlistCON                            
+0002484d  IndexlistCPY                            
+000249b3  Indexlist_addNumber                     
+00024c7f  Indexlist_findInsert                    
+0002495f  Indexlist_getISortArray                 
+00024977  Indexlist_getIndex                      
+00024929  Indexlist_getNumberArray                
+000248e3  Indexlist_init                          
+00024a65  Indexlist_removeNumber                  
+00024b8d  Indexlist_swapNumbers                   
+00024377  MessageHandlingCON                      
+000243ad  MessageHandlingCPY                      
+0002473d  MessageHandling_getErrorCodeMessage     
+00024543  MessageHandling_listAllMessages         
+00024513  MessageHandling_reset                   
+000243e1  MessageHandling_throwError              
+000244ad  MessageHandling_throwInfo               
+0002458f  MessageHandling_throwMessage            
+00024447  MessageHandling_throwWarning            
+0001e265  OptionsCON                              
+0001e271  OptionsCPY                              
+0001e6a9  Options_ensureConsistency               
+0001e9cd  Options_print                           
+0001e423  Options_setToDefault                    
+0001e63d  Options_setToFast                       
+0001e5d9  Options_setToMPC                        
+0001e5b7  Options_setToReliable                   
+00000000  QP                                      
+006fdcf8  QPB                                     
+00012325  QProblemBCON                            
+0001259d  QProblemBCPY                            
+00003dc9  QProblemBCPY_computeCholesky            
+00004725  QProblemBCPY_determineDataShift         
+00005001  QProblemBCPY_getRelativeHomotopyLength  
+00004b75  QProblemBCPY_loadQPvectorsFromFile      
+00004051  QProblemBCPY_obtainAuxiliaryWorkingSet  
+00004961  QProblemBCPY_setupQPdata                
+000049cd  QProblemBCPY_setupQPdataFromFile        
+0000491b  QProblemBCPY_setupQPdataM               
+0000edf1  QProblemBCPY_updateFarBounds            
+000185b9  QProblemB_addBound                      
+00015605  QProblemB_areBoundsConsistent           
+00014d71  QProblemB_backsolveR                    
+00014da5  QProblemB_backsolveRrem                 
+0001813d  QProblemB_changeActiveSet               
+000146cd  QProblemB_computeCholesky               
+00015029  QProblemB_determineDataShift            
+0001429f  QProblemB_determineHessianType          
+00017549  QProblemB_determineStepDirection        
+00013999  QProblemB_getDualSolution               
+000136ed  QProblemB_getNZ                         
+000136fd  QProblemB_getObjVal                     
+0001376d  QProblemB_getObjValX                    
+00013931  QProblemB_getPrimalSolution             
+0001596d  QProblemB_getRelativeHomotopyLength     
+00013611  QProblemB_getWorkingSet                 
+0001362d  QProblemB_getWorkingSetBounds           
+000136b3  QProblemB_getWorkingSetConstraints      
+00012f2d  QProblemB_hotstart                      
+00013375  QProblemB_hotstartF                     
+00013549  QProblemB_hotstartFW                    
+0001343d  QProblemB_hotstartW                     
+000128e5  QProblemB_init                          
+0001299d  QProblemB_initF                         
+00012cfb  QProblemB_initFW                        
+00012835  QProblemB_initM                         
+00012a53  QProblemB_initMW                        
+00012ba3  QProblemB_initW                         
+00015669  QProblemB_isCPUtimeLimitExceeded        
+00015475  QProblemB_loadQPvectorsFromFile         
+00014949  QProblemB_obtainAuxiliaryWorkingSet     
+000182a9  QProblemB_performDriftCorrection        
+00015da5  QProblemB_performRamping                
+000157fd  QProblemB_performRatioTestB             
+00017b81  QProblemB_performStep                   
+00018ded  QProblemB_printIteration                
+0001428f  QProblemB_printOptions                  
+00013b15  QProblemB_printProperties               
+000156e9  QProblemB_regulariseHessian             
+000188e9  QProblemB_removeBound                   
+0001270d  QProblemB_reset                         
+000155ad  QProblemB_setInfeasibilityFlag          
+00013a0d  QProblemB_setPrintLevel                 
+0001739d  QProblemB_setupAuxiliaryQP              
+00017145  QProblemB_setupAuxiliaryQPbounds        
+00016fa9  QProblemB_setupAuxiliaryQPgradient      
+00016e95  QProblemB_setupAuxiliaryQPsolution      
+00016cb5  QProblemB_setupAuxiliaryWorkingSet      
+00012eb1  QProblemB_setupInitialCholesky          
+00015261  QProblemB_setupQPdata                   
+000152cd  QProblemB_setupQPdataFromFile           
+0001521f  QProblemB_setupQPdataM                  
+00014463  QProblemB_setupSubjectToType            
+000144ad  QProblemB_setupSubjectToTypeNew         
+00018527  QProblemB_shallRefactorise              
+00015fe5  QProblemB_solveInitialQP                
+00016459  QProblemB_solveQP                       
+00016a21  QProblemB_solveRegularisedQP            
+00015b89  QProblemB_updateFarBounds               
+000010f7  QProblemCON                             
+000013dd  QProblemCPY                             
+00008ebd  QProblem_addBound                       
+00009875  QProblem_addBound_checkLI               
+00009b95  QProblem_addBound_ensureLI              
+00007d1d  QProblem_addConstraint                  
+00008471  QProblem_addConstraint_checkLI          
+00008885  QProblem_addConstraint_ensureLI         
+0001166d  QProblem_areBoundsConsistent            
+00004471  QProblem_backsolveR                     
+000044a5  QProblem_backsolveRrem                  
+0000c355  QProblem_backsolveT                     
+0000e721  QProblem_changeActiveSet                
+0000652d  QProblem_computeProjectedCholesky       
+0000c5f9  QProblem_determineDataShift             
+00003be3  QProblem_determineHessianType           
+0000c7a5  QProblem_determineStepDirection         
+00011801  QProblem_dropInfeasibles                
+0000b745  QProblem_ensureNonzeroCurvature         
+00002e53  QProblem_getDualSolution                
+00002e3d  QProblem_getNZ                          
+00002ed1  QProblem_getObjVal                      
+00002f41  QProblem_getObjValX                     
+00003105  QProblem_getPrimalSolution              
+0000e9ad  QProblem_getRelativeHomotopyLength      
+00002ca5  QProblem_getWorkingSet                  
+00002cf5  QProblem_getWorkingSetBounds            
+00002d95  QProblem_getWorkingSetConstraints       
+000020a9  QProblem_hotstart                       
+00002701  QProblem_hotstartF                      
+00002945  QProblem_hotstartFW                     
+000027f1  QProblem_hotstartW                      
+000018c5  QProblem_init                           
+000019c9  QProblem_initF                          
+00001e0d  QProblem_initFW                         
+000017ed  QProblem_initM                          
+00001a89  QProblem_initMW                         
+00001c4b  QProblem_initW                          
+00004cfd  QProblem_isCPUtimeLimitExceeded         
+000105fd  QProblem_loadQPvectorsFromFile          
+000068fd  QProblem_obtainAuxiliaryWorkingSet      
+0000f879  QProblem_performDriftCorrection         
+0000b64d  QProblem_performPlainRatioTest          
+0000f00d  QProblem_performRamping                 
+00004e95  QProblem_performRatioTestB              
+0000f705  QProblem_performRatioTestC              
+0000d925  QProblem_performStep                    
+00010731  QProblem_printIteration                 
+00003263  QProblem_printOptions                   
+00003299  QProblem_printProperties                
+00004d85  QProblem_regulariseHessian              
+0000ac01  QProblem_removeBound                    
+0000a111  QProblem_removeConstraint               
+00001675  QProblem_reset                          
+00002ebb  QProblem_setConstraintProduct           
+00004cad  QProblem_setInfeasibilityFlag           
+00003175  QProblem_setPrintLevel                  
+0000fec9  QProblem_setupAuxiliaryQP               
+00007765  QProblem_setupAuxiliaryQPbounds         
+00007579  QProblem_setupAuxiliaryQPgradient       
+00007355  QProblem_setupAuxiliaryQPsolution       
+00006d61  QProblem_setupAuxiliaryWorkingSet       
+00002025  QProblem_setupInitialCholesky           
+00010399  QProblem_setupQPdata                    
+00010451  QProblem_setupQPdataFromFile            
+000102cd  QProblem_setupQPdataM                   
+0000605b  QProblem_setupSubjectToType             
+000060a5  QProblem_setupSubjectToTypeNew          
+000067f5  QProblem_setupTQfactorisation           
+000101e7  QProblem_shallRefactorise               
+00002a51  QProblem_solveCurrentEQP                
+00005221  QProblem_solveInitialQP                 
+000057d1  QProblem_solveQP                        
+00005db9  QProblem_solveRegularisedQP             
+0000eb9d  QProblem_updateFarBounds                
+00028573  ResetISR                                
+UNDEFED   SHT$$INIT_ARRAY$$Base                   
+UNDEFED   SHT$$INIT_ARRAY$$Limit                  
+000250fd  VDE_fun                                 
+01175698  __CIOBUF_                               
+20000aec  __STACK_END                             
+00000200  __STACK_SIZE                            
+20000aec  __STACK_TOP                             
+00000008  __SYSMEM_SIZE                           
+0002a340  __TI_CINIT_Base                         
+0002a350  __TI_CINIT_Limit                        
+0002a32c  __TI_Handler_Table_Base                 
+0002a338  __TI_Handler_Table_Limit                
+00027df9  __TI_auto_init                          
+00027861  __TI_buff_read                          
+000265bd  __TI_cleanup                            
+200008c0  __TI_cleanup_ptr                        
+0002799d  __TI_closefile                          
+00027fb5  __TI_decompress_lzss                    
+00028559  __TI_decompress_none                    
+000276ed  __TI_doflush                            
+200008c4  __TI_dtors_ptr                          
+200008c8  __TI_enable_exit_profile_output         
+200008b0  __TI_ft_end                             
+ffffffff  __TI_pprof_out_hndl                     
+0001d969  __TI_printfi                            
+ffffffff  __TI_prof_data_size                     
+ffffffff  __TI_prof_data_start                    
+00027817  __TI_rd_ok                              
+0002804f  __TI_readmsg                            
+00023a6d  __TI_scanfi                             
+00000000  __TI_static_base__                      
+01176718  __TI_tmpnams                            
+0002801d  __TI_writemsg                           
+000277b5  __TI_wrt_ok                             
+00028567  __TI_zero_init                          
+0002857f  __abort_execution                       
+00027bf1  __aeabi_cdcmpeq                         
+00027bf1  __aeabi_cdcmple                         
+00027c77  __aeabi_cdrcmple                        
+00027ed9  __aeabi_d2f                             
+000282e5  __aeabi_d2iz                            
+0002832d  __aeabi_d2uiz                           
+000266c3  __aeabi_dadd                            
+00026f67  __aeabi_ddiv                            
+00027419  __aeabi_dmul                            
+000266b9  __aeabi_dsub                            
+00028371  __aeabi_f2d                             
+000283df  __aeabi_i2d                             
+000284a9  __aeabi_lmul                            
+00027d7d  __aeabi_memclr                          
+00027d7d  __aeabi_memclr4                         
+00027d7d  __aeabi_memclr8                         
+00027901  __aeabi_memcpy                          
+00027901  __aeabi_memcpy4                         
+00027901  __aeabi_memcpy8                         
+00027d7f  __aeabi_memset                          
+00027d7f  __aeabi_memset4                         
+00027d7f  __aeabi_memset8                         
+200008bc  __aeabi_stderr                          
+200008b4  __aeabi_stdin                           
+200008b8  __aeabi_stdout                          
+00028455  __aeabi_ui2d                            
+00025f55  __aeabi_uldivmod                        
+ffffffff  __binit__                               
+ffffffff  __c_args__                              
+0001bc83  __mpu_init                              
+200008ec  __stack                                 
+00025b89  __vla_alloc                             
+00025a81  __vla_dealloc                           
+00025b09  __vla_dealloc_eh                        
+00028491  _args_main                              
+000281a5  _c_int00                                
+00029dc0  _ctypes_                                
+200006f0  _ftable                                 
+200008d8  _lock                                   
+00028517  _nop                                    
+0002850f  _register_lock                          
+00028509  _register_unlock                        
+20000af0  _sys_memory                             
+0001e263  _system_post_cinit                      
+00028583  _system_pre_init                        
+200008dc  _unlock                                 
+000281fd  abort                                   
+0002840d  acado_tic                               
+0002841b  acado_toc                               
+000259d5  add_device                              
+0002824d  atoi                                    
+011767b8  aux                                     
+ffffffff  binit                                   
+000250cd  calloc                                  
+00025985  close                                   
+UNDEFED   condensing_N2_fixed_initial_state       
+00028299  copy_in                                 
+0002851d  copysign                                
+0002851d  copysignl                               
+000232a5  d_eye                                   
+000231c5  d_free                                  
+000231d1  d_free_align                            
+000231e9  d_ones                                  
+0002323d  d_ones_align                            
+000235b1  d_print_bmat                            
+00023331  d_print_mat                             
+000233bb  d_print_mat_e                           
+00023449  d_print_pmat                            
+000234f1  d_print_pmat_e                          
+000230f9  d_zeros                                 
+0002314d  d_zeros_align                           
+0001add9  dgemm_                                  
+0001b92d  dpotrf_                                 
+01176898  dual_solution                           
+200008e0  errno                                   
+00028205  exit                                    
+00027a03  fclose                                  
+00027739  fflush                                  
+00027b61  fgetc                                   
+00026613  fopen                                   
+00027f51  fprintf                                 
+00027a35  fputc                                   
+0002709d  fputs                                   
+00024e17  free                                    
+000265e9  freopen                                 
+000280e9  frexp                                   
+000280e9  frexpl                                  
+00026485  fscanf                                  
+00028085  fseek                                   
+00026b55  fwrite                                  
+00000000  g_pfnVectors                            
+00027b61  getc                                    
+00027bdd  getchar                                 
+UNDEFED   gettimeofday                            
+0117689c  in                                      
+00023075  initialise_qpoases                      
+00026ec9  int_free                                
+00026ed5  int_free_align                          
+00026ee1  int_print_mat                           
+00026e1d  int_zeros                               
+00026e69  int_zeros_align                         
+00025359  jac_fun                                 
+00027515  ldexp                                   
+00027515  ldexpl                                  
+00025961  lseek                                   
+0002814d  ltoa                                    
+000210c1  main                                    
+200008e8  main_func_sp                            
+00024dad  malloc                                  
+00024fe1  memalign                                
+00028475  memccpy                                 
+00028435  memchr                                  
+00027901  memcpy                                  
+00027d85  memset                                  
+00024d2d  minit                                   
+0001cf4f  normaliseConstraints                    
+00022db1  ocp_qp_condensing_qpoases               
+00023007  ocp_qp_condensing_qpoases_workspace_size
+000258b3  open                                    
+01176868  out                                     
+UNDEFED   posix_memalign                          
+011768a0  primal_solution                         
+00027e71  printf                                  
+00027a35  putc                                    
+00027ab9  putchar                                 
+000271a9  puts                                    
+0001ccaf  qpOASES_convertBooleanTypeToString      
+0001cd57  qpOASES_convertPrintLevelToString       
+0001ccd7  qpOASES_convertSubjectToStatusToString  
+0001c693  qpOASES_getCPUtime                      
+000247b1  qpOASES_getGlobalMessageHandler         
+0001c7c1  qpOASES_getKktViolation                 
+0001cc69  qpOASES_getKktViolationSB               
+0001c6bd  qpOASES_getNorm                         
+0001cdd7  qpOASES_getSimpleStatus                 
+0001bf2f  qpOASES_myPrintf                        
+0001bf7b  qpOASES_printCopyrightNotice            
+0001beb3  qpOASES_printI                          
+0001bdef  qpOASES_printM                          
+0001bf01  qpOASES_printNI                         
+0001be81  qpOASES_printNM                         
+0001bdc1  qpOASES_printNV                         
+0001be33  qpOASES_printPM                         
+0001bd65  qpOASES_printPV                         
+0001bd17  qpOASES_printV                          
+0001c093  qpOASES_readFromFileI                   
+0001bf9f  qpOASES_readFromFileM                   
+0001c077  qpOASES_readFromFileV                   
+0001c483  qpOASES_writeIntoFileI                  
+0001c375  qpOASES_writeIntoFileM                  
+0001c45d  qpOASES_writeIntoFileV                  
+0001c53f  qpOASES_writeIntoMatFile                
+0001c615  qpOASES_writeIntoMatFileI               
+0002588f  read                                    
+00024ed9  realloc                                 
+00025805  remove                                  
+00025867  remove_device                           
+00025829  rename                                  
+20000000  returnValueList                         
+00027515  scalbn                                  
+00027515  scalbnl                                 
+00026437  scanf                                   
+00027611  setvbuf                                 
+0001b359  sgemm_                                  
+00021b9d  sim_erk                                 
+00022561  sim_erk_create_opts                     
+000223f5  sim_erk_create_workspace                
+00027acd  snprintf                                
+0001bae1  spotrf_                                 
+000269e5  sqrt                                    
+000269e5  sqrtl                                   
+000284f1  strchr                                  
+000284c1  strcmp                                  
+00028531  strcpy                                  
+00028545  strlen                                  
+000283a9  strncpy                                 
+000284d9  strrchr                                 
+00025d19  strtod                                  
+000271d1  strtol                                  
+00025d19  strtold                                 
+00026149  strtoll                                 
+00027305  strtoul                                 
+00026cc1  strtoull                                
+00027cfd  ungetc                                  
+00025805  unlink                                  
+000231dd  v_free_align                            
+00023195  v_zeros_align                           
+000263f7  vfscanf                                 
+000263b9  vscanf                                  
+01176818  work                                    
+00025775  write                                   
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                    
+-------   ----                                    
+00000000  QP                                      
+00000000  __TI_static_base__                      
+00000000  g_pfnVectors                            
+00000008  __SYSMEM_SIZE                           
+00000200  __STACK_SIZE                            
+000010f7  QProblemCON                             
+000013dd  QProblemCPY                             
+00001675  QProblem_reset                          
+000017ed  QProblem_initM                          
+000018c5  QProblem_init                           
+000019c9  QProblem_initF                          
+00001a89  QProblem_initMW                         
+00001c4b  QProblem_initW                          
+00001e0d  QProblem_initFW                         
+00002025  QProblem_setupInitialCholesky           
+000020a9  QProblem_hotstart                       
+00002701  QProblem_hotstartF                      
+000027f1  QProblem_hotstartW                      
+00002945  QProblem_hotstartFW                     
+00002a51  QProblem_solveCurrentEQP                
+00002ca5  QProblem_getWorkingSet                  
+00002cf5  QProblem_getWorkingSetBounds            
+00002d95  QProblem_getWorkingSetConstraints       
+00002e3d  QProblem_getNZ                          
+00002e53  QProblem_getDualSolution                
+00002ebb  QProblem_setConstraintProduct           
+00002ed1  QProblem_getObjVal                      
+00002f41  QProblem_getObjValX                     
+00003105  QProblem_getPrimalSolution              
+00003175  QProblem_setPrintLevel                  
+00003263  QProblem_printOptions                   
+00003299  QProblem_printProperties                
+00003be3  QProblem_determineHessianType           
+00003dc9  QProblemBCPY_computeCholesky            
+00004051  QProblemBCPY_obtainAuxiliaryWorkingSet  
+00004471  QProblem_backsolveR                     
+000044a5  QProblem_backsolveRrem                  
+00004725  QProblemBCPY_determineDataShift         
+0000491b  QProblemBCPY_setupQPdataM               
+00004961  QProblemBCPY_setupQPdata                
+000049cd  QProblemBCPY_setupQPdataFromFile        
+00004b75  QProblemBCPY_loadQPvectorsFromFile      
+00004cad  QProblem_setInfeasibilityFlag           
+00004cfd  QProblem_isCPUtimeLimitExceeded         
+00004d85  QProblem_regulariseHessian              
+00004e95  QProblem_performRatioTestB              
+00005001  QProblemBCPY_getRelativeHomotopyLength  
+00005221  QProblem_solveInitialQP                 
+000057d1  QProblem_solveQP                        
+00005db9  QProblem_solveRegularisedQP             
+0000605b  QProblem_setupSubjectToType             
+000060a5  QProblem_setupSubjectToTypeNew          
+0000652d  QProblem_computeProjectedCholesky       
+000067f5  QProblem_setupTQfactorisation           
+000068fd  QProblem_obtainAuxiliaryWorkingSet      
+00006d61  QProblem_setupAuxiliaryWorkingSet       
+00007355  QProblem_setupAuxiliaryQPsolution       
+00007579  QProblem_setupAuxiliaryQPgradient       
+00007765  QProblem_setupAuxiliaryQPbounds         
+00007d1d  QProblem_addConstraint                  
+00008471  QProblem_addConstraint_checkLI          
+00008885  QProblem_addConstraint_ensureLI         
+00008ebd  QProblem_addBound                       
+00009875  QProblem_addBound_checkLI               
+00009b95  QProblem_addBound_ensureLI              
+0000a111  QProblem_removeConstraint               
+0000ac01  QProblem_removeBound                    
+0000b64d  QProblem_performPlainRatioTest          
+0000b745  QProblem_ensureNonzeroCurvature         
+0000c355  QProblem_backsolveT                     
+0000c5f9  QProblem_determineDataShift             
+0000c7a5  QProblem_determineStepDirection         
+0000d925  QProblem_performStep                    
+0000e721  QProblem_changeActiveSet                
+0000e9ad  QProblem_getRelativeHomotopyLength      
+0000eb9d  QProblem_updateFarBounds                
+0000edf1  QProblemBCPY_updateFarBounds            
+0000f00d  QProblem_performRamping                 
+0000f705  QProblem_performRatioTestC              
+0000f879  QProblem_performDriftCorrection         
+0000fec9  QProblem_setupAuxiliaryQP               
+000101e7  QProblem_shallRefactorise               
+000102cd  QProblem_setupQPdataM                   
+00010399  QProblem_setupQPdata                    
+00010451  QProblem_setupQPdataFromFile            
+000105fd  QProblem_loadQPvectorsFromFile          
+00010731  QProblem_printIteration                 
+0001166d  QProblem_areBoundsConsistent            
+00011801  QProblem_dropInfeasibles                
+00012325  QProblemBCON                            
+0001259d  QProblemBCPY                            
+0001270d  QProblemB_reset                         
+00012835  QProblemB_initM                         
+000128e5  QProblemB_init                          
+0001299d  QProblemB_initF                         
+00012a53  QProblemB_initMW                        
+00012ba3  QProblemB_initW                         
+00012cfb  QProblemB_initFW                        
+00012eb1  QProblemB_setupInitialCholesky          
+00012f2d  QProblemB_hotstart                      
+00013375  QProblemB_hotstartF                     
+0001343d  QProblemB_hotstartW                     
+00013549  QProblemB_hotstartFW                    
+00013611  QProblemB_getWorkingSet                 
+0001362d  QProblemB_getWorkingSetBounds           
+000136b3  QProblemB_getWorkingSetConstraints      
+000136ed  QProblemB_getNZ                         
+000136fd  QProblemB_getObjVal                     
+0001376d  QProblemB_getObjValX                    
+00013931  QProblemB_getPrimalSolution             
+00013999  QProblemB_getDualSolution               
+00013a0d  QProblemB_setPrintLevel                 
+00013b15  QProblemB_printProperties               
+0001428f  QProblemB_printOptions                  
+0001429f  QProblemB_determineHessianType          
+00014463  QProblemB_setupSubjectToType            
+000144ad  QProblemB_setupSubjectToTypeNew         
+000146cd  QProblemB_computeCholesky               
+00014949  QProblemB_obtainAuxiliaryWorkingSet     
+00014d71  QProblemB_backsolveR                    
+00014da5  QProblemB_backsolveRrem                 
+00015029  QProblemB_determineDataShift            
+0001521f  QProblemB_setupQPdataM                  
+00015261  QProblemB_setupQPdata                   
+000152cd  QProblemB_setupQPdataFromFile           
+00015475  QProblemB_loadQPvectorsFromFile         
+000155ad  QProblemB_setInfeasibilityFlag          
+00015605  QProblemB_areBoundsConsistent           
+00015669  QProblemB_isCPUtimeLimitExceeded        
+000156e9  QProblemB_regulariseHessian             
+000157fd  QProblemB_performRatioTestB             
+0001596d  QProblemB_getRelativeHomotopyLength     
+00015b89  QProblemB_updateFarBounds               
+00015da5  QProblemB_performRamping                
+00015fe5  QProblemB_solveInitialQP                
+00016459  QProblemB_solveQP                       
+00016a21  QProblemB_solveRegularisedQP            
+00016cb5  QProblemB_setupAuxiliaryWorkingSet      
+00016e95  QProblemB_setupAuxiliaryQPsolution      
+00016fa9  QProblemB_setupAuxiliaryQPgradient      
+00017145  QProblemB_setupAuxiliaryQPbounds        
+0001739d  QProblemB_setupAuxiliaryQP              
+00017549  QProblemB_determineStepDirection        
+00017b81  QProblemB_performStep                   
+0001813d  QProblemB_changeActiveSet               
+000182a9  QProblemB_performDriftCorrection        
+00018527  QProblemB_shallRefactorise              
+000185b9  QProblemB_addBound                      
+000188e9  QProblemB_removeBound                   
+00018ded  QProblemB_printIteration                
+000191dd  DenseMatrixCON                          
+000191ff  DenseMatrixCPY                          
+0001927d  DenseMatrix_free                        
+00019287  DenseMatrix_init                        
+0001931b  DenseMatrix_diag                        
+00019363  DenseMatrix_isDiag                      
+000193f7  DenseMatrix_getNorm                     
+00019421  DenseMatrix_getRowNorm                  
+00019461  DenseMatrix_getRow                      
+00019699  DenseMatrix_getCol                      
+000197e3  DenseMatrix_times                       
+000198b1  DenseMatrix_transTimes                  
+00019991  DenseMatrix_subTimes                    
+0001a73d  DenseMatrix_subTransTimes               
+0001ab73  DenseMatrix_addToDiag                   
+0001abcb  DenseMatrix_print                       
+0001abe1  DenseMatrix_bilinear                    
+0001add9  dgemm_                                  
+0001b359  sgemm_                                  
+0001b92d  dpotrf_                                 
+0001bae1  spotrf_                                 
+0001bc83  __mpu_init                              
+0001bd17  qpOASES_printV                          
+0001bd65  qpOASES_printPV                         
+0001bdc1  qpOASES_printNV                         
+0001bdef  qpOASES_printM                          
+0001be33  qpOASES_printPM                         
+0001be81  qpOASES_printNM                         
+0001beb3  qpOASES_printI                          
+0001bf01  qpOASES_printNI                         
+0001bf2f  qpOASES_myPrintf                        
+0001bf7b  qpOASES_printCopyrightNotice            
+0001bf9f  qpOASES_readFromFileM                   
+0001c077  qpOASES_readFromFileV                   
+0001c093  qpOASES_readFromFileI                   
+0001c375  qpOASES_writeIntoFileM                  
+0001c45d  qpOASES_writeIntoFileV                  
+0001c483  qpOASES_writeIntoFileI                  
+0001c53f  qpOASES_writeIntoMatFile                
+0001c615  qpOASES_writeIntoMatFileI               
+0001c693  qpOASES_getCPUtime                      
+0001c6bd  qpOASES_getNorm                         
+0001c7c1  qpOASES_getKktViolation                 
+0001cc69  qpOASES_getKktViolationSB               
+0001ccaf  qpOASES_convertBooleanTypeToString      
+0001ccd7  qpOASES_convertSubjectToStatusToString  
+0001cd57  qpOASES_convertPrintLevelToString       
+0001cdd7  qpOASES_getSimpleStatus                 
+0001cf4f  normaliseConstraints                    
+0001d969  __TI_printfi                            
+0001e263  _system_post_cinit                      
+0001e265  OptionsCON                              
+0001e271  OptionsCPY                              
+0001e423  Options_setToDefault                    
+0001e5b7  Options_setToReliable                   
+0001e5d9  Options_setToMPC                        
+0001e63d  Options_setToFast                       
+0001e6a9  Options_ensureConsistency               
+0001e9cd  Options_print                           
+0001f327  ConstraintsCON                          
+0001f337  ConstraintsCPY                          
+0001f3c3  Constraints_init                        
+0001f4b9  Constraints_setupConstraint             
+0001f5e5  Constraints_setupAllInactive            
+0001f5f3  Constraints_setupAllLower               
+0001f603  Constraints_setupAllUpper               
+0001f629  Constraints_moveActiveToInactive        
+0001f6d5  Constraints_moveInactiveToActive        
+0001f775  Constraints_flipFixed                   
+0001f829  Constraints_shift                       
+0001fa15  Constraints_rotate                      
+0001fc3d  Constraints_print                       
+0001fcb5  Constraints_setupAll                    
+0001fe0f  Constraints_addIndex                    
+0001ff3d  Constraints_removeIndex                 
+0001ffd1  Constraints_swapIndex                   
+0002021f  BoundsCON                               
+0002022f  BoundsCPY                               
+000202b7  Bounds_init                             
+000203a1  Bounds_setupBound                       
+000204c7  Bounds_setupAllFree                     
+000204d5  Bounds_setupAllLower                    
+000204e5  Bounds_setupAllUpper                    
+000204f3  Bounds_moveFixedToFree                  
+00020599  Bounds_moveFreeToFixed                  
+00020639  Bounds_flipFixed                        
+000206cd  Bounds_swapFree                         
+00020731  Bounds_shift                            
+000208f9  Bounds_rotate                           
+00020b1d  Bounds_print                            
+00020b95  Bounds_setupAll                         
+00020ced  Bounds_addIndex                         
+00020e05  Bounds_removeIndex                      
+00020e99  Bounds_swapIndex                        
+000210c1  main                                    
+00021b9d  sim_erk                                 
+000223f5  sim_erk_create_workspace                
+00022561  sim_erk_create_opts                     
+00022db1  ocp_qp_condensing_qpoases               
+00023007  ocp_qp_condensing_qpoases_workspace_size
+00023075  initialise_qpoases                      
+000230f9  d_zeros                                 
+0002314d  d_zeros_align                           
+00023195  v_zeros_align                           
+000231c5  d_free                                  
+000231d1  d_free_align                            
+000231dd  v_free_align                            
+000231e9  d_ones                                  
+0002323d  d_ones_align                            
+000232a5  d_eye                                   
+00023331  d_print_mat                             
+000233bb  d_print_mat_e                           
+00023449  d_print_pmat                            
+000234f1  d_print_pmat_e                          
+000235b1  d_print_bmat                            
+00023a6d  __TI_scanfi                             
+00024377  MessageHandlingCON                      
+000243ad  MessageHandlingCPY                      
+000243e1  MessageHandling_throwError              
+00024447  MessageHandling_throwWarning            
+000244ad  MessageHandling_throwInfo               
+00024513  MessageHandling_reset                   
+00024543  MessageHandling_listAllMessages         
+0002458f  MessageHandling_throwMessage            
+0002473d  MessageHandling_getErrorCodeMessage     
+000247b1  qpOASES_getGlobalMessageHandler         
+0002483d  IndexlistCON                            
+0002484d  IndexlistCPY                            
+000248e3  Indexlist_init                          
+00024929  Indexlist_getNumberArray                
+0002495f  Indexlist_getISortArray                 
+00024977  Indexlist_getIndex                      
+000249b3  Indexlist_addNumber                     
+00024a65  Indexlist_removeNumber                  
+00024b8d  Indexlist_swapNumbers                   
+00024c7f  Indexlist_findInsert                    
+00024d2d  minit                                   
+00024dad  malloc                                  
+00024e17  free                                    
+00024ed9  realloc                                 
+00024fe1  memalign                                
+000250cd  calloc                                  
+000250fd  VDE_fun                                 
+00025359  jac_fun                                 
+00025451  HOSTwrite                               
+0002549d  HOSTunlink                              
+000254d5  HOSTtime64                              
+00025523  HOSTtime                                
+0002555d  HOSTrename                              
+000255bb  HOSTread                                
+00025607  HOSTopen                                
+00025659  HOSTlseek                               
+000256b5  HOSTgetenv                              
+000256f3  HOSTclose                               
+0002572b  HOSTclock                               
+00025775  write                                   
+00025805  remove                                  
+00025805  unlink                                  
+00025829  rename                                  
+00025867  remove_device                           
+0002588f  read                                    
+000258b3  open                                    
+00025961  lseek                                   
+00025985  close                                   
+000259d5  add_device                              
+00025a81  __vla_dealloc                           
+00025b09  __vla_dealloc_eh                        
+00025b89  __vla_alloc                             
+00025d19  strtod                                  
+00025d19  strtold                                 
+00025f55  __aeabi_uldivmod                        
+00026149  strtoll                                 
+000263b9  vscanf                                  
+000263f7  vfscanf                                 
+00026437  scanf                                   
+00026485  fscanf                                  
+000265bd  __TI_cleanup                            
+000265e9  freopen                                 
+00026613  fopen                                   
+000266b9  __aeabi_dsub                            
+000266c3  __aeabi_dadd                            
+00026871  FlipperCON                              
+00026885  FlipperCPY                              
+000268b9  Flipper_init                            
+000268d5  Flipper_get                             
+00026941  Flipper_set                             
+000269ad  Flipper_getDimT                         
+000269e5  sqrt                                    
+000269e5  sqrtl                                   
+00026b55  fwrite                                  
+00026cc1  strtoull                                
+00026e1d  int_zeros                               
+00026e69  int_zeros_align                         
+00026ec9  int_free                                
+00026ed5  int_free_align                          
+00026ee1  int_print_mat                           
+00026f67  __aeabi_ddiv                            
+0002709d  fputs                                   
+000271a9  puts                                    
+000271d1  strtol                                  
+00027305  strtoul                                 
+00027419  __aeabi_dmul                            
+00027515  ldexp                                   
+00027515  ldexpl                                  
+00027515  scalbn                                  
+00027515  scalbnl                                 
+00027611  setvbuf                                 
+000276ed  __TI_doflush                            
+00027739  fflush                                  
+000277b5  __TI_wrt_ok                             
+00027817  __TI_rd_ok                              
+00027861  __TI_buff_read                          
+00027901  __aeabi_memcpy                          
+00027901  __aeabi_memcpy4                         
+00027901  __aeabi_memcpy8                         
+00027901  memcpy                                  
+0002799d  __TI_closefile                          
+00027a03  fclose                                  
+00027a35  fputc                                   
+00027a35  putc                                    
+00027ab9  putchar                                 
+00027acd  snprintf                                
+00027b61  fgetc                                   
+00027b61  getc                                    
+00027bdd  getchar                                 
+00027bf1  __aeabi_cdcmpeq                         
+00027bf1  __aeabi_cdcmple                         
+00027c77  __aeabi_cdrcmple                        
+00027cfd  ungetc                                  
+00027d7d  __aeabi_memclr                          
+00027d7d  __aeabi_memclr4                         
+00027d7d  __aeabi_memclr8                         
+00027d7f  __aeabi_memset                          
+00027d7f  __aeabi_memset4                         
+00027d7f  __aeabi_memset8                         
+00027d85  memset                                  
+00027df9  __TI_auto_init                          
+00027e71  printf                                  
+00027ed9  __aeabi_d2f                             
+00027f51  fprintf                                 
+00027fb5  __TI_decompress_lzss                    
+0002801d  __TI_writemsg                           
+0002804b  C$$IO$$                                 
+0002804f  __TI_readmsg                            
+00028085  fseek                                   
+000280e9  frexp                                   
+000280e9  frexpl                                  
+0002814d  ltoa                                    
+000281a5  _c_int00                                
+000281f9  C$$EXIT                                 
+000281fd  abort                                   
+00028205  exit                                    
+0002824d  atoi                                    
+00028299  copy_in                                 
+000282e5  __aeabi_d2iz                            
+0002832d  __aeabi_d2uiz                           
+00028371  __aeabi_f2d                             
+000283a9  strncpy                                 
+000283df  __aeabi_i2d                             
+0002840d  acado_tic                               
+0002841b  acado_toc                               
+00028435  memchr                                  
+00028455  __aeabi_ui2d                            
+00028475  memccpy                                 
+00028491  _args_main                              
+000284a9  __aeabi_lmul                            
+000284c1  strcmp                                  
+000284d9  strrchr                                 
+000284f1  strchr                                  
+00028509  _register_unlock                        
+0002850f  _register_lock                          
+00028517  _nop                                    
+0002851d  copysign                                
+0002851d  copysignl                               
+00028531  strcpy                                  
+00028545  strlen                                  
+00028559  __TI_decompress_none                    
+00028567  __TI_zero_init                          
+00028573  ResetISR                                
+0002857f  __abort_execution                       
+00028583  _system_pre_init                        
+00029dc0  _ctypes_                                
+0002a32c  __TI_Handler_Table_Base                 
+0002a338  __TI_Handler_Table_Limit                
+0002a340  __TI_CINIT_Base                         
+0002a350  __TI_CINIT_Limit                        
+006fdcf8  QPB                                     
+0111d964  A_row_major                             
+01175698  __CIOBUF_                               
+01176718  __TI_tmpnams                            
+011767b8  aux                                     
+01176818  work                                    
+01176868  out                                     
+01176898  dual_solution                           
+0117689c  in                                      
+011768a0  primal_solution                         
+20000000  returnValueList                         
+200006f0  _ftable                                 
+200008b0  __TI_ft_end                             
+200008b4  __aeabi_stdin                           
+200008b8  __aeabi_stdout                          
+200008bc  __aeabi_stderr                          
+200008c0  __TI_cleanup_ptr                        
+200008c4  __TI_dtors_ptr                          
+200008c8  __TI_enable_exit_profile_output         
+200008d8  _lock                                   
+200008dc  _unlock                                 
+200008e0  errno                                   
+200008e8  main_func_sp                            
+200008ec  __stack                                 
+20000aec  __STACK_END                             
+20000aec  __STACK_TOP                             
+20000af0  _sys_memory                             
+ffffffff  __TI_pprof_out_hndl                     
+ffffffff  __TI_prof_data_size                     
+ffffffff  __TI_prof_data_start                    
+ffffffff  __binit__                               
+ffffffff  __c_args__                              
+ffffffff  binit                                   
+UNDEFED   SHT$$INIT_ARRAY$$Base                   
+UNDEFED   SHT$$INIT_ARRAY$$Limit                  
+UNDEFED   condensing_N2_fixed_initial_state       
+UNDEFED   gettimeofday                            
+UNDEFED   posix_memalign                          
+
+[474 symbols]
