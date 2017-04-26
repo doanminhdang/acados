@@ -160,12 +160,12 @@ int main() {
 
     int rep, nrep = NREP;
 
-    int nx = 8;  // number of states (it has to be even for the mass-spring
+    int nx = 6;  // number of states (it has to be even for the mass-spring
                   // system test problem)
     int nu = 3;  // number of inputs (controllers) (it has to be at least 1 and
                   // at most nx/2 for the mass-spring system test problem)
     int N = 15;   // horizon length
-    int nb = 11;  // number of box constrained inputs and states
+    int nb = 9;  // number of box constrained inputs and states
     int ng = 0;  // 4;  // number of general constraints
     int ngN = 4;  // 4;  // number of general constraints at the last stage
 
