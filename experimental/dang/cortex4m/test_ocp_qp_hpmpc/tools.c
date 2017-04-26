@@ -356,12 +356,12 @@ void padeapprox(int m, int row, double *A) {
     /*    double d0 = 0;*/
     /*    double d1 = 1;*/
     /*    double dm1 = -1;*/
-
     double *U;
+    printf("4 \n");
     d_zeros(&U, row, row);
+    printf("4 \n");
     double *V;
     d_zeros(&V, row, row);
-
     if (m == 3) {
         double c[] = {120, 60, 12, 1};
         double *A0;
@@ -629,19 +629,19 @@ void padeapprox(int m, int row, double *A) {
 }
 
 void expm(int row, double *A) {
-    int i;
-
+    int i;	
     int m_vals[] = {3, 5, 7, 9, 13};
     double theta[] = {0.01495585217958292, 0.2539398330063230,
                       0.9504178996162932, 2.097847961257068, 5.371920351148152};
     int lentheta = 5;
 
     double normA = onenorm(row, row, A);
-
     if (normA <= theta[4]) {
         for (i = 0; i < lentheta; i++) {
             if (normA <= theta[i]) {
+                printf("3 \n");
                 padeapprox(m_vals[i], row, A);
+                printf("3 \n");
                 break;
             }
         }

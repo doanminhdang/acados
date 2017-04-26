@@ -2,18 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="d_zeros" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="d_zeros"/>
-			<item value="dzeros"/>
-			<item value="TARGET_X64"/>
-			<item value="MAXITER"/>
-			<item value="MAXITOL"/>
-			<item value="maxito"/>
+			<item value="timeval"/>
+			<item value="time"/>
+			<item value="tv0"/>
+			<item value="toc"/>
+			<item value="tic"/>
+			<item value="work space"/>
+			<item value="ERROR:"/>
+			<item value="free"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -21,8 +23,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="390" key="DIALOG_HEIGHT"/>
-		<item value="549" key="DIALOG_X_ORIGIN"/>
-		<item value="112" key="DIALOG_Y_ORIGIN"/>
+		<item value="394" key="DIALOG_HEIGHT"/>
+		<item value="1011" key="DIALOG_X_ORIGIN"/>
+		<item value="136" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

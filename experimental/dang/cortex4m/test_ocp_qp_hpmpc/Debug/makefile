@@ -162,7 +162,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 test_ocp_qp_hpmpc.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C129ENCPDT -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"test_ocp_qp_hpmpc.map" --heap_size=0x400 --stack_size=512 -i"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/lib" -i"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="test_ocp_qp_hpmpc_linkInfo.xml" --rom_model -o "test_ocp_qp_hpmpc.out" $(ORDERED_OBJS)
+	"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C129ENCPDT -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"test_ocp_qp_hpmpc.map" --heap_size=0x3fa00 --stack_size=512 -i"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/lib" -i"E:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.0.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="test_ocp_qp_hpmpc_linkInfo.xml" --rom_model -o "test_ocp_qp_hpmpc.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -46,6 +46,12 @@ Mass-spring system: nx/2 masses connected each other with springs (in a row),
 and the first and the last one to walls. nu (<=nx) controls act on the first nu
 masses. The system is sampled with sampling time Ts.
 ************************************************/
+void d_zeros(double **pA, int row, int col);
+
+void d_free(double *pA);
+
+void d_print_mat(int row, int col, double *A, int lda);
+
 void mass_spring_system(double Ts, int nx, int nu, double *A, double *B,
                         double *b, double *x0) {
     int nx2 = nx * nx;
@@ -76,6 +82,7 @@ void mass_spring_system(double Ts, int nx, int nu, double *A, double *B,
     dmcopy(pp, pp, T, pp, Ac + pp, nx);
     dmcopy(pp, pp, I, pp, Ac + pp * nx, nx);
     dmcopy(pp, pp, Z, pp, Ac + pp * (nx + 1), nx);
+
     free(T);
     free(Z);
     free(I);
@@ -94,11 +101,11 @@ void mass_spring_system(double Ts, int nx, int nu, double *A, double *B,
     double *bb;
     d_zeros(&bb, nx, 1);
     dmcopy(nx, 1, bb, nx, b, nx);
-
     dmcopy(nx, nx, Ac, nx, A, nx);
     dscal_3l(nx2, Ts, A);
+    printf("2 \n");
     expm(nx, A);
-
+    printf("2 \n");
     d_zeros(&T, nx, nx);
     d_zeros(&I, nx, nx);
     for (ii = 0; ii < nx; ii++) I[ii * (nx + 1)] = 1.0;  // I = eye(nx);
@@ -160,12 +167,12 @@ int main() {
 
     int rep, nrep = NREP;
 
-    int nx = 8;  // number of states (it has to be even for the mass-spring
+    int nx = 6;  // number of states (it has to be even for the mass-spring
                   // system test problem)
     int nu = 3;  // number of inputs (controllers) (it has to be at least 1 and
                   // at most nx/2 for the mass-spring system test problem)
-    int N = 4;   // horizon length
-    int nb = 11;  // number of box constrained inputs and states
+    int N = 15;   // horizon length
+    int nb = 9;  // number of box constrained inputs and states
     int ng = 0;  // 4;  // number of general constraints
     int ngN = 4;  // 4;  // number of general constraints at the last stage
 
@@ -173,22 +180,22 @@ int main() {
 
     int nbu = nu < nb ? nu : nb;
     int nbx = nb - nu > 0 ? nb - nu : 0;
-    printf("1 \n");
+
     // stage-wise variant size
-    int nxx[5];
+    int nxx[N+1];
     nxx[0] = 0;
     for (ii = 1; ii <= N; ii++) nxx[ii] = nx;
-    printf("2 \n");
-    int nuu[5];
+
+    int nuu[N+1];
     for (ii = 0; ii < N; ii++) nuu[ii] = nu;
     nuu[N] = 0;
-    printf("3 \n");
-    int nbb[5];
+
+    int nbb[N+1];
     nbb[0] = nbu;
     for (ii = 1; ii < N; ii++) nbb[ii] = nb;
     nbb[N] = nbx;
-    printf("4 \n");
-    int ngg[5];
+
+    int ngg[N+1];
     for (ii = 0; ii < N; ii++) ngg[ii] = ng;
     ngg[N] = ngN;
 
@@ -225,20 +232,33 @@ int main() {
     ************************************************/
 
     // state space matrices & initial state
-    printf("5 \n");
+
+
     double *A;
-    d_zeros(&A, nx, nx);  // states update matrix
+    d_zeros(&A, 1, 1);  // states update matrix
+
+/*
+    double *A;
+    A = malloc(sizeof(double));
+    int i;
+    for(i=0; i<1; i++) A[i] = 0.0;
+*/
+/*
+    double A[4];
+    int i;
+    for(i=0; i<4; i++) A[i] = 0.0;
+*/
     double *B;
     d_zeros(&B, nx, nu);  // inputs matrix
     double *b;
     d_zeros(&b, nx, 1);  // states offset
     double *x0;
     d_zeros(&x0, nx, 1);  // initial state
-
+    printf("1 \n");
     // mass-spring system
     double Ts = 0.5;  // sampling time
     mass_spring_system(Ts, nx, nu, A, B, b, x0);
-
+    printf("1 \n");
     for (jj = 0; jj < nx; jj++) b[jj] = 0.1;
 
     for (jj = 0; jj < nx; jj++) x0[jj] = 0;

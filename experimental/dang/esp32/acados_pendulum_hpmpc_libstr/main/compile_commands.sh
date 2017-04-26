@@ -1,0 +1,22 @@
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_aux_extern_depend_lib4.c  -c  -g -O0 -o obj/d_aux_extern_depend_lib4.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_aux_extern_depend_lib.c  -c  -g -O0 -o obj/d_aux_extern_depend_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_aux_ip_hard_libstr.c  -c  -g -O0 -o obj/d_aux_ip_hard_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_aux_lib.c  -c  -g -O0 -o obj/d_aux_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_back_ric_rec_libstr.c  -c  -g -O0 -o obj/d_back_ric_rec_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_blas1_lib.c  -c  -g -O0 -o obj/d_blas1_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_blas2_lib.c  -c  -g -O0 -o obj/d_blas2_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_blas3_diag_lib.c  -c  -g -O0 -o obj/d_blas3_diag_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_blas3_lib.c  -c  -g -O0 -o obj/d_blas3_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_ip2_res_hard_libstr.c  -c  -g -O0 -o obj/d_ip2_res_hard_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_lapack_lib.c  -c  -g -O0 -o obj/d_lapack_lib.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_part_cond_libstr.c  -c  -g -O0 -o obj/d_part_cond_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude d_res_ip_res_hard_libstr.c  -c  -g -O0 -o obj/d_res_ip_res_hard_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude fortran_order_interface_libstr.c  -c  -g -O0 -o obj/fortran_order_interface_libstr.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude i_aux.c  -c  -g -O0 -o obj/i_aux.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude kernel_sgemm_4x4_lib4.c  -c  -g -O0 -o obj/kernel_sgemm_4x4_lib4.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude kernel_sgemv_4_lib4.c  -c  -g -O0 -o obj/kernel_sgemv_4_lib4.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude ocp_qp_hpmpc.c  -c  -g -O0 -o obj/ocp_qp_hpmpc.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude print.c  -c  -g -O0 -o obj/print.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude timing.c  -c  -g -O0 -o obj/timing.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude tools.c  -c  -g -O0 -o obj/tools.o
+gcc -std=c99 -Wall -Wextra -O2 -fPIC -march=native -Wno-implicit-function-declaration -I. -Iinclude -o bin/test_ocp_qp_hpmpc.exe test_ocp_qp_hpmpc.c obj/d_aux_extern_depend_lib4.o obj/d_aux_extern_depend_lib.o obj/d_aux_ip_hard_libstr.o obj/d_aux_lib.o obj/d_back_ric_rec_libstr.o obj/d_blas1_lib.o obj/d_blas2_lib.o obj/d_blas3_diag_lib.o obj/d_blas3_lib.o obj/d_ip2_res_hard_libstr.o obj/d_lapack_lib.o obj/d_part_cond_libstr.o obj/d_res_ip_res_hard_libstr.o obj/fortran_order_interface_libstr.o obj/i_aux.o obj/kernel_sgemm_4x4_lib4.o obj/kernel_sgemv_4_lib4.o obj/ocp_qp_hpmpc.o obj/print.o obj/timing.o obj/tools.o -lm
