@@ -90,7 +90,7 @@ void main_task(void *pv)
     real_t  xref[NX]            = {0};
     real_t  uref[NX]            = {0};
     int_t   max_sqp_iters       = 1;
-    int_t   max_iters           = 10000;
+    int_t   max_iters           = 10;
     real_t  x_end[NX]           = {0};
     real_t  u_end[NU]           = {0};
 
