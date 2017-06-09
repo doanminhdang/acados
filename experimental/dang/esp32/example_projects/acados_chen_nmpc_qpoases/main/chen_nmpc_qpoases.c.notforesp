@@ -32,6 +32,9 @@
 #define NX 2
 #define NU 1
 
+#define QPOASES_NVMAX 13
+#define QPOASES_NCMAX 10
+
 #ifdef DEBUG
 static void print_states_controls(real_t *w, int_t N) {
     printf("node\tx\t\t\t\tu\n");
@@ -245,9 +248,12 @@ int main() {
         d_free(pr[i]);
         d_free(px[i]);
         d_free(pu[i]);
+        d_free(ppi[i]);
+        d_free(plam[i]);
     }
     d_free(pq[N]);
     d_free(px[N]);
+    d_free(plam[N]);
 
     free(rk_opts.A_mat);
     free(rk_opts.b_vec);

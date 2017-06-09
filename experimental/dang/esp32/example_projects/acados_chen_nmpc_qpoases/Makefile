@@ -7,5 +7,5 @@ PROJECT_NAME := app-template
 
 include $(IDF_PATH)/make/project.mk
 
-CFLAGS += -D__SUPPRESSANYOUTPUT__
+CFLAGS += -D__SUPPRESSANYOUTPUT__ -D__NO_STATIC__ -D__EXTERNAL_DIMENSIONS__
 CFLAGS += -Wno-unused-function -Wno-unused-parameter -Wno-implicit-function-declaration

@@ -30,7 +30,7 @@
  *
  *	Definition of all global constants.
  */
-
+#include "ocp_qp_condensing_qpoases.h"
 
 #ifndef QPOASES_CONSTANTS_H
 #define QPOASES_CONSTANTS_H

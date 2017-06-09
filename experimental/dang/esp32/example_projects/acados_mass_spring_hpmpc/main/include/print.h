@@ -17,34 +17,30 @@
  *
  */
 
-#ifndef ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
-#define ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#ifndef ACADOS_UTILS_PRINT_H_
+#define ACADOS_UTILS_PRINT_H_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "ocp_qp_common.h"
 #include "types.h"
 
-#define QPOASES_NVMAX 13
-#define QPOASES_NCMAX 10
+void print_matrix(char *file_name, const real_t *matrix, const int_t nrows,
+    const int_t ncols);
 
-typedef struct {
-    real_t dummy;
-} ocp_qp_condensing_qpoases_args;
+void print_matrix_name(char *file_name, char *name, const real_t *matrix,
+        const int_t nrows, const int_t ncols);
 
-int_t ocp_qp_condensing_qpoases(ocp_qp_in *input, ocp_qp_out *output,
-    void *args, void *mem, void *work);
+void print_array(char *file_name, real_t *array, int_t size);
 
-int_t ocp_qp_condensing_qpoases_workspace_size(ocp_qp_in *input,
-    ocp_qp_condensing_qpoases_args *args);
+void print_int_array(char *file_name, const int_t *array, int_t size);
 
-void ocp_qp_condensing_qpoases_initialize(ocp_qp_in *qp_in, void *args_, void *mem_, void **work);
-void ocp_qp_condensing_qpoases_destroy(void *mem, void *work);
+void read_matrix(const char *file_name, real_t* array, const int_t nrows,
+        const int_t ncols);
 
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
 
-#endif  // ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#endif  // ACADOS_UTILS_PRINT_H_

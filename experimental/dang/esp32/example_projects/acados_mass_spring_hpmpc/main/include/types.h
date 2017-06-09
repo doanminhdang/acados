@@ -17,34 +17,18 @@
  *
  */
 
-#ifndef ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
-#define ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#ifndef ACADOS_UTILS_TYPES_H_
+#define ACADOS_UTILS_TYPES_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+typedef double real_t;
+typedef unsigned int uint;
+typedef int int_t;
 
-#include "ocp_qp_common.h"
-#include "types.h"
+// enum of return values
+enum return_values{
+    ACADOS_SUCCESS,
+    ACADOS_MAXITER,
+    ACADOS_MINSTEP
+};
 
-#define QPOASES_NVMAX 13
-#define QPOASES_NCMAX 10
-
-typedef struct {
-    real_t dummy;
-} ocp_qp_condensing_qpoases_args;
-
-int_t ocp_qp_condensing_qpoases(ocp_qp_in *input, ocp_qp_out *output,
-    void *args, void *mem, void *work);
-
-int_t ocp_qp_condensing_qpoases_workspace_size(ocp_qp_in *input,
-    ocp_qp_condensing_qpoases_args *args);
-
-void ocp_qp_condensing_qpoases_initialize(ocp_qp_in *qp_in, void *args_, void *mem_, void **work);
-void ocp_qp_condensing_qpoases_destroy(void *mem, void *work);
-
-#ifdef __cplusplus
-} /* extern "C" */
-#endif
-
-#endif  // ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#endif  // ACADOS_UTILS_TYPES_H_

@@ -17,34 +17,20 @@
  *
  */
 
-#ifndef ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
-#define ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#ifndef ACADOS_SIM_SIM_RK_COMMON_H_
+#define ACADOS_SIM_SIM_RK_COMMON_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include "ocp_qp_common.h"
+#include "sim_common.h"
+#include "acados/sim/sim_collocation.h"
 #include "types.h"
 
-#define QPOASES_NVMAX 13
-#define QPOASES_NCMAX 10
-
 typedef struct {
-    real_t dummy;
-} ocp_qp_condensing_qpoases_args;
+    int_t num_stages;
+    real_t *A_mat;
+    real_t *c_vec;
+    real_t *b_vec;
 
-int_t ocp_qp_condensing_qpoases(ocp_qp_in *input, ocp_qp_out *output,
-    void *args, void *mem, void *work);
+    Newton_scheme scheme;
+} sim_RK_opts;
 
-int_t ocp_qp_condensing_qpoases_workspace_size(ocp_qp_in *input,
-    ocp_qp_condensing_qpoases_args *args);
-
-void ocp_qp_condensing_qpoases_initialize(ocp_qp_in *qp_in, void *args_, void *mem_, void **work);
-void ocp_qp_condensing_qpoases_destroy(void *mem, void *work);
-
-#ifdef __cplusplus
-} /* extern "C" */
-#endif
-
-#endif  // ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#endif  // ACADOS_SIM_SIM_RK_COMMON_H_

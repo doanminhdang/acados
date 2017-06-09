@@ -17,34 +17,32 @@
  *
  */
 
-#ifndef ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
-#define ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+#ifndef ACADOS_UTILS_TIMING_H_
+#define ACADOS_UTILS_TIMING_H_
 
-#ifdef __cplusplus
-extern "C" {
+#if defined(__APPLE__)
+#include <mach/mach_time.h>
+#else
+#include <sys/stat.h>
+#include <sys/time.h>
 #endif
 
-#include "ocp_qp_common.h"
 #include "types.h"
 
-#define QPOASES_NVMAX 13
-#define QPOASES_NCMAX 10
-
-typedef struct {
-    real_t dummy;
-} ocp_qp_condensing_qpoases_args;
-
-int_t ocp_qp_condensing_qpoases(ocp_qp_in *input, ocp_qp_out *output,
-    void *args, void *mem, void *work);
-
-int_t ocp_qp_condensing_qpoases_workspace_size(ocp_qp_in *input,
-    ocp_qp_condensing_qpoases_args *args);
-
-void ocp_qp_condensing_qpoases_initialize(ocp_qp_in *qp_in, void *args_, void *mem_, void **work);
-void ocp_qp_condensing_qpoases_destroy(void *mem, void *work);
-
-#ifdef __cplusplus
-} /* extern "C" */
+#if defined(__APPLE__)
+typedef struct acado_timer_ {
+    uint64_t tic;
+    uint64_t toc;
+    mach_timebase_info_data_t tinfo;
+} acado_timer;
+#else
+typedef struct acado_timer_ {
+    struct timeval tic;
+    struct timeval toc;
+} acado_timer;
 #endif
 
-#endif  // ACADOS_OCP_QP_OCP_QP_CONDENSING_QPOASES_H_
+void acado_tic(acado_timer* t);
+real_t acado_toc(acado_timer* t);
+
+#endif  // ACADOS_UTILS_TIMING_H_

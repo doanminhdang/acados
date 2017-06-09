@@ -1,5 +1,5 @@
 # This Makefile helps to compile the acados example
-# chen_nmpc_qpoases.c on microcontrollers
+# test_ocp_qp_hpmpc on microcontrollers
 
 # Makefile to help compiling acados code in a directory
 # It scans the SRCDIR to find all source files,
@@ -7,20 +7,31 @@
 # after that it links all the objects to compile the project
 # Note: PROJECT is the name of the main file to execute
 # Author: Dang Doan
-# Date: 2017.03.08
+# Date: 2017.03.15
 
 # Project name
-PROJECT=chen_nmpc_qpoases
+PROJECT=ocp_qp_hpmpc
+
+# BLASFEO-specific options
+LA = REFERENCE
+TARGET = GENERIC
 
 # Compiler
 CC = gcc
-CFLAGS = -std=c99 -Wall -Wextra -Wno-error -fPIC -D__SUPPRESSANYOUTPUT__ -D__NO_STATIC__ -D__EXTERNAL_DIMENSIONS__
-CFLAGS += -Wno-unused-function -Wno-unused-parameter -Wno-implicit-function-declaration
+CFLAGS = -std=c99 -Wextra -Wno-error -fPIC -march=native
+CFLAGS += -Wno-implicit-function-declaration -Wno-unused-variable -Wno-unused-label -Wno-unused-parameter -Wno-parentheses
+# -Wall
 
 # Exclude particular source files
 IGNORESRC = $(SRCDIR)/$(PROJECT).$(SRCEXT)
 # main.c in the code of ESP32
 IGNORESRC += $(SRCDIR)/main.c
+# some BLASFEO files due to splitting code in the blas files
+IGNORESRC += $(SRCDIR)/x_blas1_lib.c
+IGNORESRC += $(SRCDIR)/x_blas2_lib.c
+IGNORESRC += $(SRCDIR)/x_blas3_diag_lib.c
+IGNORESRC += $(SRCDIR)/x_blas3_lib.c
+IGNORESRC += $(SRCDIR)/x_lapack_lib.c
 
 # Directories
 BUILDDIR = obj
